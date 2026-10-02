@@ -1,1778 +1,1459 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klinik Euonia — Sehat, Nyaman, Terpercaya</title>
+<style>
+/* ============ RESET & VARIABEL ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sky-50:#f4faff;
+  --sky-100:#e6f4ff;
+  --sky-200:#cde8fb;
+  --sky-300:#a8d7f5;
+  --sky-400:#75bfec;
+  --sky-500:#3ea3e0;
+  --sky-600:#2487c4;
+  --sky-700:#1b6d9f;
+  --ink:#0d2b45;
+  --ink-soft:#527089;
+  --line:#d9ecfa;
+  --white:#ffffff;
+  --radius:16px;
+  --radius-lg:22px;
+  --shadow-sm:0 2px 10px rgba(19,90,140,.07);
+  --shadow:0 12px 32px rgba(19,90,140,.10);
+  --shadow-lg:0 24px 60px rgba(19,90,140,.16);
+  --font:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.hidden{display:none !important}
 
-  <title>Klinik Eunoia — Klinik Keluarga Terpercaya di Jakarta Selatan</title>
-  <meta name="description" content="Klinik Eunoia melayani kebutuhan kesehatan keluarga dengan layanan umum, gigi, anak, kandungan, laboratorium, vaksinasi, fisioterapi, dan medical check up." />
-  <meta name="keywords" content="Klinik Eunoia, klinik Jakarta Selatan, dokter Jakarta Selatan, klinik keluarga, BPJS, medical check up, laboratorium, vaksinasi" />
-  <meta name="author" content="Klinik Eunoia" />
-  <link rel="canonical" href="https://klinikeunoia.id/" />
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Klinik Eunoia — Kesehatan Anda, Prioritas Kami" />
-  <meta property="og:description" content="Layanan kesehatan keluarga yang nyaman, profesional, dan mudah diakses." />
-  <meta property="og:url" content="https://klinikeunoia.id/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85" />
+/* ============ TOMBOL ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 24px;border-radius:999px;border:1.5px solid transparent;
+  font-weight:600;font-size:.95rem;cursor:pointer;transition:.22s ease;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--sky-500);color:#fff;box-shadow:0 8px 20px rgba(62,163,224,.35)}
+.btn-primary:hover{background:var(--sky-600);transform:translateY(-2px);box-shadow:0 12px 26px rgba(62,163,224,.45)}
+.btn-ghost{background:#fff;color:var(--sky-700);border-color:var(--sky-200)}
+.btn-ghost:hover{background:var(--sky-50);border-color:var(--sky-400)}
+.btn.full{width:100%}
+.btn-sm{padding:8px 16px;font-size:.83rem}
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Klinik Eunoia — Klinik Keluarga Terpercaya" />
-  <meta name="twitter:description" content="Layanan kesehatan keluarga yang nyaman dan profesional." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85" />
+/* ============ HEADER ============ */
+.site-header{
+  position:sticky;top:0;z-index:900;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-wrap{display:flex;align-items:center;gap:20px;height:76px;position:relative}
+.brand{display:flex;align-items:center;gap:11px;font-size:1.12rem;font-weight:600;letter-spacing:-.2px}
+.brand-mark{
+  width:40px;height:40px;flex:0 0 40px;border-radius:12px;
+  background:linear-gradient(135deg,var(--sky-400),var(--sky-600));
+  color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.15rem;
+  box-shadow:0 6px 16px rgba(62,163,224,.4);
+}
+.brand-text strong{color:var(--sky-600)}
+.nav{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav a{
+  padding:9px 14px;border-radius:10px;font-size:.9rem;font-weight:500;
+  color:var(--ink-soft);transition:.18s;
+}
+.nav a:hover{background:var(--sky-100);color:var(--sky-700)}
+.nav-cta{margin-left:12px}
+.nav-toggle{
+  display:none;margin-left:auto;background:#fff;border:1.5px solid var(--line);
+  width:44px;height:44px;border-radius:12px;font-size:1.25rem;cursor:pointer;color:var(--sky-700);
+}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+/* ============ HERO ============ */
+.hero{
+  background:
+    radial-gradient(900px 460px at 88% -10%, #d5edff 0%, transparent 62%),
+    linear-gradient(165deg,#eaf6ff 0%, #f8fcff 62%, #ffffff 100%);
+  padding:78px 0 88px;
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(117,191,236,.20),transparent 68%);
+  left:-190px;bottom:-230px;pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:1}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--sky-200);color:var(--sky-700);
+  padding:7px 16px;border-radius:999px;font-size:.82rem;font-weight:600;
+  box-shadow:var(--shadow-sm);margin-bottom:22px;
+}
+.hero h1{
+  font-size:clamp(2.1rem,4.4vw,3.35rem);line-height:1.14;
+  letter-spacing:-1.4px;font-weight:800;margin-bottom:18px;
+}
+.hero h1 span{color:var(--sky-500)}
+.hero p.lead{font-size:1.05rem;color:var(--ink-soft);max-width:520px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:42px}
+.hero-stats{display:flex;gap:38px;flex-wrap:wrap}
+.stat b{display:block;font-size:1.65rem;font-weight:800;color:var(--sky-600);line-height:1.2}
+.stat span{font-size:.84rem;color:var(--ink-soft)}
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+.hero-art{position:relative;display:flex;justify-content:center;align-items:center;min-height:380px}
+.hero-card{
+  width:100%;max-width:360px;background:#fff;border-radius:var(--radius-lg);
+  padding:46px 34px;text-align:center;box-shadow:var(--shadow-lg);
+  border:1px solid var(--sky-100);position:relative;z-index:2;
+}
+.hero-card .ring{
+  width:96px;height:96px;margin:0 auto 22px;border-radius:50%;
+  background:linear-gradient(135deg,var(--sky-100),var(--sky-200));
+  display:grid;place-items:center;color:var(--sky-600);position:relative;
+}
+.hero-card .ring::before{
+  content:"";position:absolute;inset:-12px;border-radius:50%;
+  border:2px dashed var(--sky-300);animation:spin 18s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-card h3{font-size:1.25rem;margin-bottom:8px}
+.hero-card p{font-size:.9rem;color:var(--ink-soft)}
+.float-card{
+  position:absolute;background:#fff;border-radius:14px;padding:13px 18px;
+  box-shadow:var(--shadow);border:1px solid var(--sky-100);
+  font-size:.84rem;font-weight:600;display:flex;align-items:center;gap:9px;z-index:3;
+  animation:float 5s ease-in-out infinite;
+}
+.float-1{top:16px;left:-6px}
+.float-2{bottom:26px;right:-6px;animation-delay:1.6s}
+.dot{width:9px;height:9px;border-radius:50%;background:#38c98a;box-shadow:0 0 0 4px rgba(56,201,138,.18)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif']
-          },
-          colors: {
-            primary: '#0B63CE',
-            blue2: '#1E88E5',
-            darkblue: '#0A2A43',
-            softblue: '#EAF4FF'
-          },
-          boxShadow: {
-            soft: '0 15px 45px rgba(15, 23, 42, 0.08)',
-            card: '0 8px 30px rgba(15, 23, 42, 0.06)'
-          }
-        }
-      }
-    }
-  </script>
+/* ============ SEKSI UMUM ============ */
+section{padding:82px 0}
+.bg-soft{background:var(--sky-50)}
+.section-head{text-align:center;max-width:660px;margin:0 auto 50px}
+.section-head .eyebrow{
+  display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--sky-500);margin-bottom:12px;
+}
+.section-head h2{
+  font-size:clamp(1.65rem,3.1vw,2.25rem);letter-spacing:-.9px;
+  font-weight:800;margin-bottom:14px;line-height:1.24;
+}
+.section-head p{color:var(--ink-soft);font-size:.98rem}
 
-  <!-- Lucide -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+/* ============ LAYANAN ============ */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 28px;transition:.25s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--sky-300)}
+.icon-box{
+  width:56px;height:56px;border-radius:15px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--sky-100),var(--sky-200));
+  color:var(--sky-600);margin-bottom:20px;
+}
+.card h3{font-size:1.08rem;margin-bottom:9px;font-weight:700}
+.card p{font-size:.9rem;color:var(--ink-soft)}
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
+/* ============ DOKTER ============ */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.doc-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 22px;text-align:center;transition:.25s ease;
+}
+.doc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--sky-300)}
+.avatar{
+  width:78px;height:78px;border-radius:50%;margin:0 auto 18px;
+  display:grid;place-items:center;font-weight:800;font-size:1.4rem;color:#fff;
+  background:linear-gradient(135deg,var(--sky-400),var(--sky-600));
+  box-shadow:0 10px 22px rgba(62,163,224,.32);
+}
+.doc-card h3{font-size:1rem;margin-bottom:4px}
+.doc-card .spec{font-size:.84rem;color:var(--sky-600);font-weight:600;margin-bottom:10px}
+.doc-card .sched{font-size:.8rem;color:var(--ink-soft);background:var(--sky-50);
+  border-radius:9px;padding:7px 10px;display:inline-block}
 
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      color: #0f172a;
-      overflow-x: hidden;
-    }
+/* ============ JADWAL ============ */
+.jadwal-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}
+.table-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+thead{background:linear-gradient(135deg,var(--sky-500),var(--sky-600));color:#fff}
+th,td{padding:15px 18px;text-align:left}
+tbody tr{border-bottom:1px solid var(--line)}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--sky-50)}
+td b{font-weight:600}
 
-    ::selection {
-      background: #bfdbfe;
-      color: #0a2a43;
-    }
+.form-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 26px;box-shadow:var(--shadow);
+}
+.form-card h3{font-size:1.15rem;margin-bottom:6px}
+.form-card > p{font-size:.87rem;color:var(--ink-soft);margin-bottom:22px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.field input,.field select,.field textarea{
+  width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:11px;
+  background:var(--sky-50);font-size:.9rem;transition:.18s;outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--sky-400);background:#fff;box-shadow:0 0 0 4px rgba(117,191,236,.18);
+}
+.field textarea{resize:vertical;min-height:96px}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 
-    :focus-visible {
-      outline: 3px solid #1e88e5;
-      outline-offset: 3px;
-    }
+/* ============ FASILITAS ============ */
+.grid-6{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fas-card{
+  border-radius:var(--radius);padding:30px 24px;color:#fff;position:relative;overflow:hidden;
+  min-height:158px;display:flex;flex-direction:column;justify-content:flex-end;
+  background:linear-gradient(135deg,var(--sky-400),var(--sky-600));
+  transition:.25s ease;
+}
+.fas-card:nth-child(2){background:linear-gradient(135deg,#5bb4e8,#1f7fb8)}
+.fas-card:nth-child(3){background:linear-gradient(135deg,#7fc9f2,#3ea3e0)}
+.fas-card:nth-child(4){background:linear-gradient(135deg,#4aa8e2,#2277ae)}
+.fas-card:nth-child(5){background:linear-gradient(135deg,#8ed0f5,#4aa8e2)}
+.fas-card:nth-child(6){background:linear-gradient(135deg,#3d9dd8,#1b6d9f)}
+.fas-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.fas-card .emoji{font-size:1.8rem;margin-bottom:auto}
+.fas-card h3{font-size:1rem;font-weight:700;margin-bottom:3px}
+.fas-card p{font-size:.82rem;opacity:.9}
+.fas-card::after{
+  content:"";position:absolute;width:130px;height:130px;border-radius:50%;
+  background:rgba(255,255,255,.12);top:-46px;right:-40px;
+}
 
-    .hero-grid {
-      background-image:
-        linear-gradient(rgba(30,136,229,.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(30,136,229,.055) 1px, transparent 1px);
-      background-size: 42px 42px;
-    }
+/* ============ TESTIMONI ============ */
+.quote-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 26px;position:relative;transition:.25s ease;
+}
+.quote-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--sky-300)}
+.stars{color:#f5b731;font-size:.95rem;margin-bottom:14px;letter-spacing:2px}
+.quote-card p{font-size:.92rem;color:var(--ink-soft);font-style:italic;margin-bottom:20px}
+.quote-who{display:flex;align-items:center;gap:12px}
+.quote-who .mini{
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--sky-300),var(--sky-500));color:#fff;font-weight:700;
+}
+.quote-who b{display:block;font-size:.9rem}
+.quote-who span{font-size:.79rem;color:var(--ink-soft)}
 
-    .gradient-text {
-      background: linear-gradient(135deg, #0b63ce, #1e88e5);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
+/* ============ FAQ ============ */
+.faq-wrap{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+details.faq{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:0 22px;transition:.2s;
+}
+details.faq[open]{border-color:var(--sky-300);box-shadow:var(--shadow-sm)}
+details.faq summary{
+  cursor:pointer;list-style:none;padding:19px 0;font-weight:600;font-size:.96rem;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+";font-size:1.4rem;font-weight:400;color:var(--sky-500);
+  transition:.2s;line-height:1;flex:0 0 auto;
+}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq .faq-body{padding:0 0 20px;font-size:.9rem;color:var(--ink-soft)}
 
-    .glass {
-      background: rgba(255,255,255,.84);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
+/* ============ KONTAK ============ */
+.kontak-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+.info-item{display:flex;gap:16px;margin-bottom:24px}
+.info-item .ib{
+  width:46px;height:46px;flex:0 0 46px;border-radius:13px;display:grid;place-items:center;
+  background:var(--sky-100);color:var(--sky-600);font-size:1.1rem;
+}
+.info-item b{display:block;font-size:.92rem;margin-bottom:2px}
+.info-item span{font-size:.87rem;color:var(--ink-soft)}
 
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
+/* ============ FOOTER ============ */
+.site-footer{background:#0d2b45;color:#b9d4e8;padding:56px 0 26px;font-size:.88rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:38px}
+.site-footer .brand-text{color:#fff}
+.site-footer .brand-text strong{color:var(--sky-300)}
+.site-footer p{color:#8fb2cb;max-width:330px;margin-top:14px;font-size:.86rem}
+.site-footer h4{color:#fff;font-size:.92rem;margin-bottom:14px}
+.site-footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.site-footer ul a{color:#8fb2cb;transition:.18s}
+.site-footer ul a:hover{color:var(--sky-300)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  color:#7ba0bb;font-size:.82rem;
+}
+.footer-bottom a{color:#7ba0bb}
+.footer-bottom a:hover{color:var(--sky-300)}
 
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+/* ============ TOAST ============ */
+#toast{
+  position:fixed;left:50%;bottom:28px;transform:translate(-50%,120%);
+  background:#0d2b45;color:#fff;padding:14px 24px;border-radius:12px;
+  font-size:.89rem;font-weight:500;box-shadow:var(--shadow-lg);z-index:2000;
+  transition:transform .35s cubic-bezier(.2,.9,.3,1.3);max-width:90vw;text-align:center;
+}
+#toast.show{transform:translate(-50%,0)}
+#toast.ok{background:#127a52}
+#toast.err{background:#b23b3b}
 
-    .service-card,
-    .doctor-card,
-    .facility-card,
-    .quick-card {
-      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-    }
+/* ============ ADMIN : LOGIN ============ */
+#admin{min-height:100vh;background:linear-gradient(160deg,#e8f5ff,#f7fcff 70%)}
+.login-wrap{min-height:100vh;display:grid;place-items:center;padding:26px}
+.login-card{
+  width:100%;max-width:400px;background:#fff;border-radius:var(--radius-lg);
+  padding:44px 36px;box-shadow:var(--shadow-lg);border:1px solid var(--sky-100);
+  text-align:center;
+}
+.login-card .brand-mark{width:60px;height:60px;flex:0 0 60px;font-size:1.6rem;margin:0 auto 20px;border-radius:18px}
+.login-card h2{font-size:1.35rem;margin-bottom:6px;letter-spacing:-.4px}
+.login-card > p{font-size:.87rem;color:var(--ink-soft);margin-bottom:28px}
+.login-card .field{text-align:left}
+.login-error{
+  background:#fdecec;color:#b23b3b;font-size:.83rem;padding:11px 14px;
+  border-radius:10px;margin-bottom:16px;display:none;text-align:left;font-weight:500;
+}
+.login-error.show{display:block}
+.back-link{display:inline-block;margin-top:20px;font-size:.84rem;color:var(--sky-600);font-weight:600}
+.back-link:hover{text-decoration:underline}
 
-    .service-card:hover,
-    .doctor-card:hover,
-    .facility-card:hover,
-    .quick-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, .1);
-    }
+/* ============ ADMIN : PANEL ============ */
+.admin-shell{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.admin-side{
+  background:#0d2b45;color:#cfe3f2;padding:26px 18px;display:flex;flex-direction:column;gap:26px;
+}
+.admin-side .brand-text{color:#fff}
+.admin-side .brand-text strong{color:var(--sky-300)}
+.side-label{font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:#6b8fab;margin-bottom:8px}
+.side-nav{display:flex;flex-direction:column;gap:4px}
+.side-link{
+  background:transparent;border:none;text-align:left;color:#b9d4e8;cursor:pointer;
+  padding:11px 14px;border-radius:11px;font-size:.9rem;font-weight:500;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;transition:.18s;width:100%;
+}
+.side-link:hover{background:rgba(255,255,255,.08);color:#fff}
+.side-link.active{background:var(--sky-500);color:#fff;box-shadow:0 6px 16px rgba(62,163,224,.4)}
+.side-link.danger{color:#ffb3b3;margin-top:auto}
+.side-link.danger:hover{background:rgba(255,90,90,.16);color:#ffd6d6}
+.badge{
+  background:rgba(255,255,255,.18);color:#fff;font-size:.7rem;font-weight:700;
+  padding:2px 8px;border-radius:999px;min-width:22px;text-align:center;
+}
+.side-link.active .badge{background:rgba(255,255,255,.28)}
 
-    .doctor-photo {
-      aspect-ratio: 4 / 4.5;
-      object-fit: cover;
-    }
+.admin-main{padding:30px 34px 60px;overflow-x:hidden}
+.admin-top{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  flex-wrap:wrap;margin-bottom:28px;
+}
+.admin-top h1{font-size:1.5rem;letter-spacing:-.6px}
+.admin-top p{font-size:.86rem;color:var(--ink-soft)}
+.admin-user{
+  display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);
+  padding:8px 16px 8px 8px;border-radius:999px;font-size:.85rem;font-weight:600;box-shadow:var(--shadow-sm);
+}
+.admin-user .mini{
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--sky-400),var(--sky-600));color:#fff;font-weight:700;font-size:.82rem;
+}
 
-    .facility-photo {
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-    }
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:30px}
+.stat-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;box-shadow:var(--shadow-sm);transition:.2s;
+}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.stat-card .lbl{font-size:.79rem;color:var(--ink-soft);font-weight:600;text-transform:uppercase;letter-spacing:.7px}
+.stat-card .val{font-size:2rem;font-weight:800;color:var(--sky-600);line-height:1.2;margin-top:6px}
 
-    .mobile-bottom {
-      padding-bottom: env(safe-area-inset-bottom);
-    }
+.panel-box{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow-sm);margin-bottom:22px;
+}
+.panel-box h3{font-size:1.05rem;margin-bottom:4px}
+.panel-box > .sub{font-size:.84rem;color:var(--ink-soft);margin-bottom:18px}
 
-    .faq-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .35s ease;
-    }
+.data-list{display:flex;flex-direction:column;gap:12px}
+.data-row{
+  border:1px solid var(--line);border-radius:13px;padding:16px 18px;
+  display:flex;justify-content:space-between;gap:16px;align-items:flex-start;
+  background:var(--sky-50);transition:.18s;
+}
+.data-row:hover{border-color:var(--sky-300);background:#fff;box-shadow:var(--shadow-sm)}
+.data-row .who{font-weight:700;font-size:.94rem;margin-bottom:5px}
+.data-row .meta{font-size:.83rem;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:6px 16px}
+.data-row .meta b{color:var(--ink);font-weight:600}
+.data-actions{display:flex;gap:8px;align-items:center;flex-shrink:0;flex-wrap:wrap}
+.chip{
+  font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:999px;letter-spacing:.3px;
+}
+.chip.wait{background:#fff3d6;color:#9a6b00}
+.chip.confirm{background:#d8f0ff;color:#1b6d9f}
+.chip.done{background:#d9f5e6;color:#127a52}
+.btn-del{
+  background:#fff;border:1.5px solid #f3cccc;color:#c0392b;padding:7px 14px;
+  border-radius:9px;font-size:.79rem;font-weight:600;cursor:pointer;transition:.18s;
+}
+.btn-del:hover{background:#fdecec;border-color:#e79a9a}
+.empty{
+  text-align:center;padding:46px 20px;color:var(--ink-soft);font-size:.9rem;
+  border:1.5px dashed var(--line);border-radius:13px;background:var(--sky-50);
+}
+.empty .big{font-size:1.9rem;display:block;margin-bottom:10px;opacity:.6}
 
-    .faq-item.active .faq-content {
-      max-height: 400px;
-    }
-
-    .faq-item.active .faq-chevron {
-      transform: rotate(180deg);
-    }
-
-    .faq-chevron {
-      transition: transform .3s ease;
-    }
-
-    .testimonial-track {
-      transition: transform .5s ease;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-
-      .fade-up {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
-
-  <!-- MedicalClinic structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "name": "Klinik Eunoia",
-    "url": "https://klinikeunoia.id/",
-    "telephone": "+62-21-1234567",
-    "email": "halo@klinikeunoia.id",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jl. Melati No. 88",
-      "addressLocality": "Jakarta Selatan",
-      "addressRegion": "DKI Jakarta",
-      "addressCountry": "ID"
-    },
-    "openingHours": [
-      "Mo-Sa 08:00-21:00",
-      "Su 09:00-15:00"
-    ],
-    "medicalSpecialty": [
-      "GeneralPractice",
-      "Dentistry",
-      "Pediatrics",
-      "Obstetrics",
-      "PhysicalTherapy"
-    ]
+/* ============ RESPONSIF ============ */
+@media (max-width:1024px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .jadwal-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .nav-toggle{display:block}
+  .nav{
+    position:absolute;top:calc(100% + 8px);left:0;right:0;background:#fff;
+    flex-direction:column;align-items:stretch;gap:2px;padding:12px;
+    border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow-lg);
+    display:none;
   }
-  </script>
+  .nav.open{display:flex}
+  .nav a{padding:12px 14px;font-size:.94rem}
+  .nav-cta{display:none}
+  .hero{padding:56px 0 66px}
+  .hero-grid{grid-template-columns:1fr;gap:48px;text-align:center}
+  .hero p.lead{margin-left:auto;margin-right:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .hero-stats{gap:28px}
+  .grid-3,.grid-6{grid-template-columns:1fr 1fr}
+  .kontak-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .admin-shell{grid-template-columns:1fr}
+  .admin-side{flex-direction:row;flex-wrap:wrap;align-items:center;gap:12px;padding:16px}
+  .admin-side .brand{width:100%}
+  .side-label{display:none}
+  .side-nav{flex-direction:row;flex-wrap:wrap;width:100%}
+  .side-link{width:auto;padding:9px 14px;font-size:.84rem}
+  .side-link.danger{margin-top:0;margin-left:auto}
+  .admin-main{padding:22px 18px 50px}
+}
+@media (max-width:640px){
+  section{padding:60px 0}
+  .grid-3,.grid-4,.grid-6{grid-template-columns:1fr}
+  .row-2{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{gap:22px}
+  .stat b{font-size:1.4rem}
+  .float-1{left:-4px;top:6px}
+  .float-2{right:-4px;bottom:14px}
+  .data-row{flex-direction:column}
+  .data-actions{width:100%}
+  th,td{padding:12px 13px;font-size:.84rem}
+  .admin-top h1{font-size:1.22rem}
+  .stat-card .val{font-size:1.6rem}
+}
+</style>
 </head>
+<body>
 
-<body class="bg-white">
+<!-- ==================================================== -->
+<!-- ===================== LANDING ====================== -->
+<!-- ==================================================== -->
+<div id="landing">
 
-  <!-- Skip Link -->
-  <a href="#main-content"
-     class="fixed left-4 top-4 z-[100] -translate-y-20 rounded-lg bg-darkblue px-4 py-3 text-sm font-bold text-white transition focus:translate-y-0">
-    Lewati ke konten utama
-  </a>
-
-  <!-- TOP BAR -->
-  <div class="hidden bg-darkblue text-white lg:block">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-xs">
-      <div class="flex items-center gap-5">
-        <span class="flex items-center gap-2">
-          <i data-lucide="clock-3" class="h-3.5 w-3.5"></i>
-          Senin–Sabtu 08.00–21.00 · Minggu 09.00–15.00
-        </span>
-        <span class="flex items-center gap-2 text-red-100">
-          <i data-lucide="siren" class="h-3.5 w-3.5"></i>
-          IGD 24 Jam: (021) 1234567
-        </span>
-      </div>
-
-      <div class="flex items-center gap-4">
-        <span>Jl. Melati No. 88, Jakarta Selatan</span>
-        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
-           class="transition hover:text-blue-200" aria-label="Instagram Klinik Eunoia">
-          <i data-lucide="instagram" class="h-4 w-4"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- NAVBAR -->
-  <header id="site-header" class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-    <div class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-6">
-
-      <a href="#beranda" class="flex items-center gap-3" aria-label="Klinik Eunoia - Beranda">
-        <span class="grid h-10 w-10 place-items-center rounded-xl bg-primary text-white shadow-sm">
-          <i data-lucide="heart-pulse" class="h-5 w-5"></i>
-        </span>
-        <span>
-          <span class="block text-lg font-extrabold leading-none text-darkblue">Klinik Eunoia</span>
-          <span class="mt-1 block text-[10px] font-semibold uppercase tracking-[.16em] text-slate-500">
-            Care With Heart
-          </span>
-        </span>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#beranda" class="brand">
+        <span class="brand-mark">E</span>
+        <span class="brand-text">Klinik <strong>Euonia</strong></span>
       </a>
 
-      <nav id="desktop-nav" class="hidden items-center gap-5 xl:flex" aria-label="Navigasi utama">
-        <a href="#beranda" class="nav-link text-sm font-semibold text-primary">Beranda</a>
-        <a href="#layanan" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary">Layanan</a>
-        <a href="#dokter" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary">Dokter</a>
-        <a href="#jadwal" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary">Jadwal</a>
-        <a href="#fasilitas" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary">Fasilitas</a>
-        <a href="#testimoni" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary">Testimoni</a>
-        <a href="#faq" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary">FAQ</a>
-        <a href="#kontak" class="nav-link text-sm font-semibold text-slate-600 hover:text-primary">Kontak</a>
+      <nav class="nav" id="mainNav">
+        <a href="#beranda">Beranda</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#dokter">Dokter</a>
+        <a href="#jadwal">Jadwal</a>
+        <a href="#fasilitas">Fasilitas</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontak">Kontak</a>
       </nav>
 
-      <div class="hidden items-center gap-2 lg:flex">
-        <a href="#booking"
-           class="rounded-xl border border-blue-100 px-4 py-2.5 text-sm font-bold text-primary transition hover:bg-softblue">
-          Buat Janji
-        </a>
-        <a href="https://wa.me/6281234567890?text=Halo%20Klinik%20Eunoia%2C%20saya%20ingin%20membuat%20janji%20konsultasi."
-           target="_blank" rel="noopener noreferrer"
-           class="flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-blue-700">
-          <i data-lucide="message-circle" class="h-4 w-4"></i>
-          WhatsApp
-        </a>
-      </div>
-
-      <button id="menu-btn"
-              type="button"
-              class="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-slate-700 xl:hidden"
-              aria-label="Buka menu"
-              aria-expanded="false">
-        <i data-lucide="menu" class="h-5 w-5"></i>
-      </button>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white px-5 py-4 xl:hidden">
-      <nav class="flex flex-col gap-1" aria-label="Navigasi mobile">
-        <a href="#beranda" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-softblue">Beranda</a>
-        <a href="#layanan" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-softblue">Layanan</a>
-        <a href="#dokter" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-softblue">Dokter</a>
-        <a href="#jadwal" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-softblue">Jadwal</a>
-        <a href="#fasilitas" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-softblue">Fasilitas</a>
-        <a href="#testimoni" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-softblue">Testimoni</a>
-        <a href="#faq" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-softblue">FAQ</a>
-        <a href="#kontak" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-softblue">Kontak</a>
-
-        <div class="mt-3 grid grid-cols-2 gap-2">
-          <a href="#booking" class="rounded-xl bg-softblue py-3 text-center text-sm font-bold text-primary">
-            Buat Janji
-          </a>
-          <a href="https://wa.me/6281234567890?text=Halo%20Klinik%20Eunoia%2C%20saya%20ingin%20membuat%20janji."
-             target="_blank" rel="noopener noreferrer"
-             class="rounded-xl bg-primary py-3 text-center text-sm font-bold text-white">
-            WhatsApp
-          </a>
-        </div>
-      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu">☰</button>
+      <a href="#jadwal" class="btn btn-primary nav-cta">Buat Janji</a>
     </div>
   </header>
 
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section id="beranda" class="relative overflow-hidden bg-slate-50">
-      <div class="hero-grid absolute inset-0"></div>
-      <div class="absolute -right-32 top-10 h-96 w-96 rounded-full bg-blue-100/60 blur-3xl"></div>
-
-      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:py-20">
-
-        <div class="fade-up">
-          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-xs font-bold text-primary shadow-sm">
-            <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-            Klinik Keluarga Terpercaya
-          </div>
-
-          <h1 class="max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-darkblue sm:text-5xl lg:text-6xl">
-            Kesehatan Anda,
-            <span class="gradient-text">prioritas kami.</span>
-          </h1>
-
-          <p class="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            Klinik Eunoia hadir untuk memberikan layanan kesehatan yang profesional,
-            nyaman, dan mudah diakses untuk Anda dan keluarga — dari pemeriksaan rutin
-            hingga kebutuhan kesehatan yang membutuhkan perhatian lebih.
-          </p>
-
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#booking"
-               class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-200 transition hover:bg-blue-700">
-              Buat Janji Sekarang
-              <i data-lucide="arrow-right" class="h-4 w-4"></i>
-            </a>
-
-            <a href="https://wa.me/6281234567890?text=Halo%20Klinik%20Eunoia%2C%20saya%20ingin%20berkonsultasi."
-               target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-bold text-slate-700 transition hover:border-blue-200 hover:bg-softblue hover:text-primary">
-              <i data-lucide="message-circle" class="h-4 w-4"></i>
-              Chat WhatsApp
-            </a>
-
-            <a href="#jadwal"
-               class="inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3.5 text-sm font-bold text-primary transition hover:bg-white">
-              Lihat Jadwal Dokter
-              <i data-lucide="calendar-days" class="h-4 w-4"></i>
-            </a>
-          </div>
-
-          <div class="mt-10 grid grid-cols-2 gap-5 border-t border-slate-200 pt-7 sm:grid-cols-4">
-            <div>
-              <p class="text-2xl font-extrabold text-darkblue">12+</p>
-              <p class="mt-1 text-xs text-slate-500">Tahun melayani</p>
-            </div>
-            <div>
-              <p class="text-2xl font-extrabold text-darkblue">35K+</p>
-              <p class="mt-1 text-xs text-slate-500">Pasien dilayani</p>
-            </div>
-            <div>
-              <p class="text-2xl font-extrabold text-darkblue">15+</p>
-              <p class="mt-1 text-xs text-slate-500">Dokter & tenaga medis</p>
-            </div>
-            <div>
-              <p class="flex items-center gap-1 text-2xl font-extrabold text-darkblue">
-                4.9 <span class="text-sm text-amber-500">★</span>
-              </p>
-              <p class="mt-1 text-xs text-slate-500">Rating pasien</p>
-            </div>
-          </div>
+  <!-- HERO / BERANDA -->
+  <section class="hero" id="beranda">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="pill">✦ Klinik Keluarga Terpercaya Sejak 2009</span>
+        <h1>Sehat Anda,<br><span>Prioritas Kami</span></h1>
+        <p class="lead">
+          Klinik Euonia menghadirkan pelayanan kesehatan yang hangat, cepat, dan
+          terjangkau untuk seluruh anggota keluarga — didukung dokter berpengalaman
+          dan peralatan medis modern.
+        </p>
+        <div class="hero-actions">
+          <a href="#jadwal" class="btn btn-primary">Buat Janji Temu</a>
+          <a href="#layanan" class="btn btn-ghost">Lihat Layanan</a>
         </div>
-
-        <div class="fade-up relative">
-          <div class="overflow-hidden rounded-[2rem] border border-white bg-white p-2 shadow-soft">
-            <img
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1100&q=85"
-              alt="Dokter sedang berdiskusi dengan pasien di ruang konsultasi Klinik Eunoia"
-              class="hero-image h-[440px] w-full rounded-[1.5rem] object-cover sm:h-[520px]"
-              loading="eager"
-              onerror="imageFallback(this)"
-            />
-          </div>
-
-          <div class="glass absolute bottom-6 left-4 right-4 rounded-2xl border border-white p-4 shadow-lg sm:left-auto sm:w-[310px]">
-            <div class="flex items-start gap-3">
-              <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-emerald-50 text-emerald-600">
-                <i data-lucide="shield-check" class="h-5 w-5"></i>
-              </div>
-              <div>
-                <p class="text-sm font-bold text-darkblue">Pelayanan yang mengutamakan Anda</p>
-                <p class="mt-1 text-xs leading-5 text-slate-500">
-                  Tim medis kami siap membantu dengan pendekatan yang profesional dan manusiawi.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="hero-stats">
+          <div class="stat"><b>12.500+</b><span>Pasien Terlayani</span></div>
+          <div class="stat"><b>15+</b><span>Dokter Spesialis</span></div>
+          <div class="stat"><b>24 Jam</b><span>Layanan IGD</span></div>
         </div>
       </div>
-    </section>
 
-    <!-- QUICK ACTION -->
-    <section class="relative z-10 -mt-5 px-5 sm:px-6">
-      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-3 lg:grid-cols-4">
-        <a href="#booking" class="quick-card rounded-2xl border border-slate-100 bg-white p-5 shadow-card">
-          <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-blue-50 text-primary">
-            <i data-lucide="calendar-plus" class="h-5 w-5"></i>
+      <div class="hero-art">
+        <div class="hero-card">
+          <div class="ring">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M9.5 2h5v7.5H22v5h-7.5V22h-5v-7.5H2v-5h7.5z"/>
+            </svg>
           </div>
-          <h2 class="text-sm font-bold text-darkblue">Booking Online</h2>
-          <p class="mt-1 text-xs leading-5 text-slate-500">Pilih poli dan dokter sesuai kebutuhan.</p>
-        </a>
-
-        <a href="https://wa.me/6281234567890?text=Halo%20Klinik%20Eunoia%2C%20saya%20ingin%20telekonsultasi."
-           target="_blank" rel="noopener noreferrer"
-           class="quick-card rounded-2xl border border-slate-100 bg-white p-5 shadow-card">
-          <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-emerald-50 text-emerald-600">
-            <i data-lucide="video" class="h-5 w-5"></i>
-          </div>
-          <h2 class="text-sm font-bold text-darkblue">Telekonsultasi</h2>
-          <p class="mt-1 text-xs leading-5 text-slate-500">Konsultasi awal tanpa perlu datang langsung.</p>
-        </a>
-
-        <a href="#jadwal" class="quick-card rounded-2xl border border-slate-100 bg-white p-5 shadow-card">
-          <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-blue-50 text-primary">
-            <i data-lucide="clock-4" class="h-5 w-5"></i>
-          </div>
-          <h2 class="text-sm font-bold text-darkblue">Cek Jadwal</h2>
-          <p class="mt-1 text-xs leading-5 text-slate-500">Lihat jadwal praktik dokter terbaru.</p>
-        </a>
-
-        <a href="#kontak" class="quick-card rounded-2xl border border-slate-100 bg-white p-5 shadow-card">
-          <div class="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-blue-50 text-primary">
-            <i data-lucide="map-pin" class="h-5 w-5"></i>
-          </div>
-          <h2 class="text-sm font-bold text-darkblue">Lokasi & Rute</h2>
-          <p class="mt-1 text-xs leading-5 text-slate-500">Temukan lokasi klinik dengan mudah.</p>
-        </a>
+          <h3>Layanan 24 Jam</h3>
+          <p>IGD, konsultasi darurat, dan ambulans siap setiap saat untuk Anda.</p>
+        </div>
+        <div class="float-card float-1"><span class="dot"></span> Online Sekarang</div>
+        <div class="float-card float-2">⭐ 4.9/5 Kepuasan Pasien</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section id="layanan" class="px-5 py-20 sm:px-6 lg:py-28">
-      <div class="mx-auto max-w-7xl">
-        <div class="fade-up max-w-2xl">
-          <span class="text-sm font-bold uppercase tracking-wider text-primary">Layanan Kami</span>
-          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-darkblue sm:text-4xl">
-            Perawatan kesehatan untuk kebutuhan Anda dan keluarga
-          </h2>
-          <p class="mt-4 leading-7 text-slate-600">
-            Dari pemeriksaan sederhana hingga layanan penunjang kesehatan,
-            kami membantu Anda mendapatkan perawatan yang sesuai.
-          </p>
-        </div>
-
-        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
-          <!-- Service cards -->
-          <div class="service-card fade-up rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-primary">
-              <i data-lucide="stethoscope"></i>
-            </div>
-            <h3 class="mt-5 font-bold text-darkblue">Poli Umum</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Pemeriksaan dan konsultasi kesehatan untuk berbagai keluhan umum.</p>
-            <a href="#booking" class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-primary">Buat Janji <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-          </div>
-
-          <div class="service-card fade-up rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-primary">
-              <i data-lucide="smile"></i>
-            </div>
-            <h3 class="mt-5 font-bold text-darkblue">Gigi</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Pemeriksaan gigi, pembersihan karang gigi, tambal, dan perawatan lainnya.</p>
-            <a href="#booking" class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-primary">Buat Janji <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-          </div>
-
-          <div class="service-card fade-up rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-primary">
-              <i data-lucide="baby"></i>
-            </div>
-            <h3 class="mt-5 font-bold text-darkblue">Anak</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Pendampingan tumbuh kembang dan pemeriksaan kesehatan anak.</p>
-            <a href="#booking" class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-primary">Buat Janji <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-          </div>
-
-          <div class="service-card fade-up rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-primary">
-              <i data-lucide="heart"></i>
-            </div>
-            <h3 class="mt-5 font-bold text-darkblue">Kandungan</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Konsultasi kesehatan ibu, kehamilan, dan pemeriksaan kandungan.</p>
-            <a href="#booking" class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-primary">Buat Janji <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-          </div>
-
-          <div class="service-card fade-up rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-primary">
-              <i data-lucide="test-tube-2"></i>
-            </div>
-            <h3 class="mt-5 font-bold text-darkblue">Laboratorium</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Pemeriksaan laboratorium untuk membantu menunjang diagnosis dokter.</p>
-            <a href="#booking" class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-primary">Buat Janji <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-          </div>
-
-          <div class="service-card fade-up rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-primary">
-              <i data-lucide="accessibility"></i>
-            </div>
-            <h3 class="mt-5 font-bold text-darkblue">Fisioterapi</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Program terapi untuk membantu pemulihan fungsi dan mobilitas tubuh.</p>
-            <a href="#booking" class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-primary">Buat Janji <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-          </div>
-
-          <div class="service-card fade-up rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-primary">
-              <i data-lucide="syringe"></i>
-            </div>
-            <h3 class="mt-5 font-bold text-darkblue">Vaksinasi</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Vaksinasi sesuai kebutuhan dan rekomendasi tenaga kesehatan.</p>
-            <a href="#booking" class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-primary">Buat Janji <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-          </div>
-
-          <div class="service-card fade-up rounded-2xl border border-slate-200 bg-white p-6">
-            <div class="grid h-12 w-12 place-items-center rounded-xl bg-blue-50 text-primary">
-              <i data-lucide="clipboard-check"></i>
-            </div>
-            <h3 class="mt-5 font-bold text-darkblue">Medical Check Up</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-500">Pemeriksaan kesehatan berkala untuk memantau kondisi tubuh Anda.</p>
-            <a href="#booking" class="mt-5 inline-flex items-center gap-1 text-sm font-bold text-primary">Buat Janji <i data-lucide="arrow-right" class="h-4 w-4"></i></a>
-          </div>
-        </div>
+  <!-- LAYANAN -->
+  <section id="layanan">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Layanan Kami</span>
+        <h2>Perawatan Lengkap dalam Satu Atap</h2>
+        <p>Dari pemeriksaan rutin hingga penanganan spesialis, semua tersedia dengan standar medis yang terjamin.</p>
       </div>
-    </section>
 
-    <!-- ADVANTAGES -->
-    <section class="bg-slate-50 px-5 py-20 sm:px-6 lg:py-24">
-      <div class="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
-        <div class="fade-up">
-          <span class="text-sm font-bold uppercase tracking-wider text-primary">Mengapa Eunoia?</span>
-          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-darkblue sm:text-4xl">
-            Pelayanan medis yang tetap terasa manusiawi
-          </h2>
-          <p class="mt-5 leading-7 text-slate-600">
-            Kami percaya pengalaman berobat yang baik bukan hanya tentang fasilitas,
-            tetapi juga tentang bagaimana pasien didengar, dipahami, dan dilayani.
-          </p>
-
-          <div class="mt-8 grid gap-5 sm:grid-cols-2">
-            <div class="flex gap-3">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">
-                <i data-lucide="user-round-check" class="h-5 w-5"></i>
-              </div>
-              <div>
-                <h3 class="text-sm font-bold text-darkblue">Dokter berpengalaman</h3>
-                <p class="mt-1 text-xs leading-5 text-slate-500">Tim medis profesional dengan bidang keahlian yang beragam.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">
-                <i data-lucide="cpu" class="h-5 w-5"></i>
-              </div>
-              <div>
-                <h3 class="text-sm font-bold text-darkblue">Peralatan modern</h3>
-                <p class="mt-1 text-xs leading-5 text-slate-500">Peralatan penunjang dirawat dan digunakan sesuai standar.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">
-                <i data-lucide="timer" class="h-5 w-5"></i>
-              </div>
-              <div>
-                <h3 class="text-sm font-bold text-darkblue">Antrean lebih teratur</h3>
-                <p class="mt-1 text-xs leading-5 text-slate-500">Booking membantu Anda mengatur waktu kunjungan.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">
-                <i data-lucide="wallet-cards" class="h-5 w-5"></i>
-              </div>
-              <div>
-                <h3 class="text-sm font-bold text-darkblue">BPJS & asuransi</h3>
-                <p class="mt-1 text-xs leading-5 text-slate-500">Melayani pasien BPJS dan sejumlah perusahaan asuransi rekanan.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">
-                <i data-lucide="sofa" class="h-5 w-5"></i>
-              </div>
-              <div>
-                <h3 class="text-sm font-bold text-darkblue">Ruang nyaman</h3>
-                <p class="mt-1 text-xs leading-5 text-slate-500">Lingkungan bersih dan nyaman untuk pasien maupun keluarga.</p>
-              </div>
-            </div>
-
-            <div class="flex gap-3">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">
-                <i data-lucide="lock-keyhole" class="h-5 w-5"></i>
-              </div>
-              <div>
-                <h3 class="text-sm font-bold text-darkblue">Privasi terjaga</h3>
-                <p class="mt-1 text-xs leading-5 text-slate-500">Informasi dan kebutuhan kesehatan pasien ditangani secara profesional.</p>
-              </div>
-            </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 2h5v7.5H22v5h-7.5V22h-5v-7.5H2v-5h7.5z"/></svg>
           </div>
-        </div>
+          <h3>Poli Umum</h3>
+          <p>Pemeriksaan kesehatan umum, konsultasi gejala, surat keterangan sehat, dan penanganan penyakit ringan.</p>
+        </article>
 
-        <div class="fade-up relative">
-          <img
-            src="https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=1000&q=85"
-            alt="Dokter dan tenaga kesehatan berdiskusi di lingkungan klinik"
-            class="h-[500px] w-full rounded-[2rem] object-cover shadow-soft"
-            loading="lazy"
-            onerror="imageFallback(this)"
-          />
-
-          <div class="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/60 bg-white/95 p-5 shadow-lg backdrop-blur">
-            <div class="flex items-center justify-between gap-4">
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Status Klinik</p>
-                <p id="open-status" class="mt-1 text-lg font-extrabold text-darkblue">Memeriksa jam layanan...</p>
-              </div>
-              <span id="status-dot" class="h-3 w-3 rounded-full bg-slate-300"></span>
-            </div>
+        <article class="card">
+          <div class="icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5c0 3.5 5 15 5 15s5-11.5 5-15a5 5 0 0 0-5-5m0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4"/></svg>
           </div>
-        </div>
+          <h3>Poli Gigi</h3>
+          <p>Pembersihan karang gigi, tambal, pencabutan, perawatan saluran akar, dan pemutihan gigi.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 3 7v10l9 5 9-5V7zm0 4.2 4.5 2.5L12 11.2 7.5 8.7z"/></svg>
+          </div>
+          <h3>Poli Anak</h3>
+          <p>Imunisasi lengkap, tumbuh kembang anak, konsultasi gizi, dan penanganan penyakit anak.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3a2 2 0 0 0-2 2v11h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0h2v-5zM6 18.5A1.5 1.5 0 1 1 7.5 17 1.5 1.5 0 0 1 6 18.5m12 0A1.5 1.5 0 1 1 19.5 17 1.5 1.5 0 0 1 18 18.5M17 12V9.5h2.5l1.5 2.5z"/></svg>
+          </div>
+          <h3>Layanan IGD 24 Jam</h3>
+          <p>Penanganan gawat darurat, luka, cedera, dan kondisi kritis dengan ambulans siaga.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-7 3v4H8v2h4v4h2v-4h4v-2h-4V6z"/></svg>
+          </div>
+          <h3>Laboratorium &amp; Cek Darah</h3>
+          <p>Tes darah rutin, gula darah, kolesterol, fungsi hati, dan paket medical check-up.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-8-4.6-8-11a5 5 0 0 1 8-3.9A5 5 0 0 1 20 10c0 6.4-8 11-8 11"/></svg>
+          </div>
+          <h3>Kesehatan Ibu &amp; Anak</h3>
+          <p>Pemeriksaan kehamilan, USG, KB, konsultasi laktasi, dan program keluarga berencana.</p>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- DOCTORS -->
-    <section id="dokter" class="px-5 py-20 sm:px-6 lg:py-28">
-      <div class="mx-auto max-w-7xl">
-        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-          <div class="fade-up max-w-2xl">
-            <span class="text-sm font-bold uppercase tracking-wider text-primary">Tim Medis</span>
-            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-darkblue sm:text-4xl">
-              Dokter yang siap mendampingi Anda
-            </h2>
-            <p class="mt-4 leading-7 text-slate-600">
-              Pilih dokter berdasarkan kebutuhan kesehatan dan jadwal praktik yang tersedia.
-            </p>
-          </div>
-          <a href="#jadwal" class="text-sm font-bold text-primary">Lihat semua jadwal →</a>
-        </div>
-
-        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
-          <article class="doctor-card fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=85"
-                 alt="dr. Aditya Pratama, Sp.PD"
-                 class="doctor-photo w-full"
-                 loading="lazy"
-                 onerror="imageFallback(this)" />
-            <div class="p-5">
-              <h3 class="font-bold text-darkblue">dr. Aditya Pratama, Sp.PD</h3>
-              <p class="mt-1 text-sm font-semibold text-primary">Penyakit Dalam</p>
-              <p class="mt-3 text-xs text-slate-500">Senin & Rabu · 16.00–20.00</p>
-              <a href="#booking" class="mt-4 flex items-center justify-center rounded-xl bg-softblue py-2.5 text-xs font-bold text-primary hover:bg-blue-100">Buat Janji</a>
-            </div>
-          </article>
-
-          <article class="doctor-card fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=85"
-                 alt="dr. Maria Lestari, Sp.A"
-                 class="doctor-photo w-full"
-                 loading="lazy"
-                 onerror="imageFallback(this)" />
-            <div class="p-5">
-              <h3 class="font-bold text-darkblue">dr. Maria Lestari, Sp.A</h3>
-              <p class="mt-1 text-sm font-semibold text-primary">Spesialis Anak</p>
-              <p class="mt-3 text-xs text-slate-500">Selasa & Kamis · 15.00–19.00</p>
-              <a href="#booking" class="mt-4 flex items-center justify-center rounded-xl bg-softblue py-2.5 text-xs font-bold text-primary hover:bg-blue-100">Buat Janji</a>
-            </div>
-          </article>
-
-          <article class="doctor-card fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=85"
-                 alt="dr. Sarah Wijaya, Sp.OG"
-                 class="doctor-photo w-full"
-                 loading="lazy"
-                 onerror="imageFallback(this)" />
-            <div class="p-5">
-              <h3 class="font-bold text-darkblue">dr. Sarah Wijaya, Sp.OG</h3>
-              <p class="mt-1 text-sm font-semibold text-primary">Obstetri & Ginekologi</p>
-              <p class="mt-3 text-xs text-slate-500">Jumat · 15.00–20.00</p>
-              <a href="#booking" class="mt-4 flex items-center justify-center rounded-xl bg-softblue py-2.5 text-xs font-bold text-primary hover:bg-blue-100">Buat Janji</a>
-            </div>
-          </article>
-
-          <article class="doctor-card fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src="https://images.unsplash.com/photo-1618498082410-b4aa22193b38?auto=format&fit=crop&w=600&q=85"
-                 alt="drg. Kevin Santoso"
-                 class="doctor-photo w-full"
-                 loading="lazy"
-                 onerror="imageFallback(this)" />
-            <div class="p-5">
-              <h3 class="font-bold text-darkblue">drg. Kevin Santoso</h3>
-              <p class="mt-1 text-sm font-semibold text-primary">Dokter Gigi</p>
-              <p class="mt-3 text-xs text-slate-500">Sabtu · 09.00–15.00</p>
-              <a href="#booking" class="mt-4 flex items-center justify-center rounded-xl bg-softblue py-2.5 text-xs font-bold text-primary hover:bg-blue-100">Buat Janji</a>
-            </div>
-          </article>
-        </div>
+  <!-- DOKTER -->
+  <section id="dokter" class="bg-soft">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Tim Medis</span>
+        <h2>Dokter Berpengalaman &amp; Ramah</h2>
+        <p>Tim dokter kami berkomitmen memberikan diagnosis akurat dengan pendekatan yang tenang dan manusiawi.</p>
       </div>
-    </section>
 
-    <!-- SCHEDULE -->
-    <section id="jadwal" class="bg-slate-50 px-5 py-20 sm:px-6 lg:py-24">
-      <div class="mx-auto max-w-7xl">
-        <div class="fade-up">
-          <span class="text-sm font-bold uppercase tracking-wider text-primary">Jadwal Praktik</span>
-          <h2 class="mt-3 text-3xl font-extrabold text-darkblue sm:text-4xl">Atur waktu kunjungan Anda</h2>
-          <p class="mt-4 max-w-2xl leading-7 text-slate-600">
-            Jadwal berikut merupakan jadwal contoh dan dapat berubah. Hubungi kami untuk memastikan ketersediaan dokter.
-          </p>
-        </div>
+      <div class="grid-4">
+        <article class="doc-card">
+          <div class="avatar">AR</div>
+          <h3>dr. Anindya Rahma, Sp.PD</h3>
+          <div class="spec">Spesialis Penyakit Dalam</div>
+          <span class="sched">Senin – Rabu · 09.00–14.00</span>
+        </article>
 
-        <div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
-          <div class="overflow-x-auto">
-            <table class="w-full min-w-[700px] text-left">
-              <thead class="bg-darkblue text-white">
-                <tr>
-                  <th class="px-5 py-4 text-xs font-bold uppercase tracking-wider">Hari</th>
-                  <th class="px-5 py-4 text-xs font-bold uppercase tracking-wider">Poli</th>
-                  <th class="px-5 py-4 text-xs font-bold uppercase tracking-wider">Dokter</th>
-                  <th class="px-5 py-4 text-xs font-bold uppercase tracking-wider">Jam</th>
-                  <th class="px-5 py-4 text-xs font-bold uppercase tracking-wider">Booking</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-100">
-                <tr>
-                  <td class="px-5 py-4 text-sm font-semibold">Senin</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">Penyakit Dalam</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">dr. Aditya Pratama, Sp.PD</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">16.00–20.00</td>
-                  <td class="px-5 py-4"><a href="#booking" class="text-sm font-bold text-primary">Pilih →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm font-semibold">Selasa</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">Anak</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">dr. Maria Lestari, Sp.A</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">15.00–19.00</td>
-                  <td class="px-5 py-4"><a href="#booking" class="text-sm font-bold text-primary">Pilih →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm font-semibold">Rabu</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">Penyakit Dalam</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">dr. Aditya Pratama, Sp.PD</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">16.00–20.00</td>
-                  <td class="px-5 py-4"><a href="#booking" class="text-sm font-bold text-primary">Pilih →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm font-semibold">Kamis</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">Anak</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">dr. Maria Lestari, Sp.A</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">15.00–19.00</td>
-                  <td class="px-5 py-4"><a href="#booking" class="text-sm font-bold text-primary">Pilih →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm font-semibold">Jumat</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">Kandungan</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">dr. Sarah Wijaya, Sp.OG</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">15.00–20.00</td>
-                  <td class="px-5 py-4"><a href="#booking" class="text-sm font-bold text-primary">Pilih →</a></td>
-                </tr>
-                <tr>
-                  <td class="px-5 py-4 text-sm font-semibold">Sabtu</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">Gigi</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">drg. Kevin Santoso</td>
-                  <td class="px-5 py-4 text-sm text-slate-600">09.00–15.00</td>
-                  <td class="px-5 py-4"><a href="#booking" class="text-sm font-bold text-primary">Pilih →</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <article class="doc-card">
+          <div class="avatar">BP</div>
+          <h3>dr. Bagas Prasetyo</h3>
+          <div class="spec">Dokter Umum</div>
+          <span class="sched">Setiap Hari · 08.00–20.00</span>
+        </article>
+
+        <article class="doc-card">
+          <div class="avatar">CW</div>
+          <h3>drg. Clara Wijaya</h3>
+          <div class="spec">Dokter Gigi</div>
+          <span class="sched">Selasa – Kamis · 10.00–16.00</span>
+        </article>
+
+        <article class="doc-card">
+          <div class="avatar">DN</div>
+          <h3>dr. Dimas Nugraha, Sp.A</h3>
+          <div class="spec">Spesialis Anak</div>
+          <span class="sched">Rabu – Jumat · 09.00–15.00</span>
+        </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FACILITIES -->
-    <section id="fasilitas" class="px-5 py-20 sm:px-6 lg:py-28">
-      <div class="mx-auto max-w-7xl">
-        <div class="fade-up max-w-2xl">
-          <span class="text-sm font-bold uppercase tracking-wider text-primary">Fasilitas</span>
-          <h2 class="mt-3 text-3xl font-extrabold text-darkblue sm:text-4xl">
-            Lingkungan yang nyaman untuk proses perawatan
-          </h2>
-        </div>
-
-        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="facility-card fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=85"
-                 alt="Ruang tunggu Klinik Eunoia"
-                 class="facility-photo w-full"
-                 loading="lazy"
-                 onerror="imageFallback(this)" />
-            <div class="p-4"><h3 class="font-bold text-darkblue">Ruang Tunggu</h3><p class="mt-1 text-xs text-slate-500">Area tunggu bersih dan nyaman.</p></div>
-          </div>
-
-          <div class="facility-card fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f4df?auto=format&fit=crop&w=800&q=85"
-                 alt="Ruang pemeriksaan pasien"
-                 class="facility-photo w-full"
-                 loading="lazy"
-                 onerror="imageFallback(this)" />
-            <div class="p-4"><h3 class="font-bold text-darkblue">Ruang Periksa</h3><p class="mt-1 text-xs text-slate-500">Ruang konsultasi dengan privasi terjaga.</p></div>
-          </div>
-
-          <div class="facility-card fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=85"
-                 alt="Fasilitas laboratorium medis"
-                 class="facility-photo w-full"
-                 loading="lazy"
-                 onerror="imageFallback(this)" />
-            <div class="p-4"><h3 class="font-bold text-darkblue">Laboratorium</h3><p class="mt-1 text-xs text-slate-500">Pemeriksaan penunjang sesuai kebutuhan.</p></div>
-          </div>
-
-          <div class="facility-card fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=800&q=85"
-                 alt="Area farmasi klinik"
-                 class="facility-photo w-full"
-                 loading="lazy"
-                 onerror="imageFallback(this)" />
-            <div class="p-4"><h3 class="font-bold text-darkblue">Farmasi</h3><p class="mt-1 text-xs text-slate-500">Kebutuhan obat dan informasi penggunaan.</p></div>
-          </div>
-        </div>
+  <!-- JADWAL -->
+  <section id="jadwal">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Jadwal Praktik</span>
+        <h2>Atur Kunjungan Anda</h2>
+        <p>Lihat jadwal dokter dan buat janji temu secara online — tanpa perlu mengantre lama di klinik.</p>
       </div>
-    </section>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimoni" class="bg-darkblue px-5 py-20 text-white sm:px-6 lg:py-24">
-      <div class="mx-auto max-w-7xl">
-        <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-          <div>
-            <span class="text-sm font-bold uppercase tracking-wider text-blue-300">Cerita Pasien</span>
-            <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Pengalaman mereka di Eunoia</h2>
-          </div>
-
-          <div class="flex gap-2">
-            <button id="prev-testimonial" class="grid h-10 w-10 place-items-center rounded-full border border-white/20 hover:bg-white/10" aria-label="Testimoni sebelumnya">
-              <i data-lucide="arrow-left" class="h-4 w-4"></i>
-            </button>
-            <button id="next-testimonial" class="grid h-10 w-10 place-items-center rounded-full border border-white/20 hover:bg-white/10" aria-label="Testimoni berikutnya">
-              <i data-lucide="arrow-right" class="h-4 w-4"></i>
-            </button>
-          </div>
+      <div class="jadwal-grid">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Dokter</th>
+                <th>Spesialisasi</th>
+                <th>Hari</th>
+                <th>Jam</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>dr. Anindya Rahma, Sp.PD</b></td>
+                <td>Penyakit Dalam</td>
+                <td>Sen – Rab</td>
+                <td>09.00 – 14.00</td>
+              </tr>
+              <tr>
+                <td><b>dr. Bagas Prasetyo</b></td>
+                <td>Umum</td>
+                <td>Setiap Hari</td>
+                <td>08.00 – 20.00</td>
+              </tr>
+              <tr>
+                <td><b>drg. Clara Wijaya</b></td>
+                <td>Gigi</td>
+                <td>Sel – Kam</td>
+                <td>10.00 – 16.00</td>
+              </tr>
+              <tr>
+                <td><b>dr. Dimas Nugraha, Sp.A</b></td>
+                <td>Anak</td>
+                <td>Rab – Jum</td>
+                <td>09.00 – 15.00</td>
+              </tr>
+              <tr>
+                <td><b>dr. Elena Kusuma, Sp.OG</b></td>
+                <td>Kandungan</td>
+                <td>Sen &amp; Kam</td>
+                <td>13.00 – 18.00</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div id="testimonial-slider" class="mt-10 overflow-hidden">
-          <div id="testimonial-track" class="testimonial-track flex">
-            <article class="testimonial-slide min-w-full lg:min-w-[33.333%] lg:px-2">
-              <div class="h-full rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div class="flex gap-1 text-amber-400" aria-label="Rating 5 dari 5">★★★★★</div>
-                <p class="mt-5 text-sm leading-7 text-slate-200">
-                  “Proses pendaftaran cukup jelas dan stafnya membantu menjelaskan tahapan pemeriksaan. Ruang tunggunya juga nyaman.”
-                </p>
-                <div class="mt-6 flex items-center gap-3">
-                  <div class="grid h-10 w-10 place-items-center rounded-full bg-blue-500/20 text-sm font-bold">AN</div>
-                  <div><p class="text-sm font-bold">Ayu N.</p><p class="text-xs text-slate-400">Pasien Poli Umum</p></div>
-                </div>
-              </div>
-            </article>
+        <form class="form-card" id="bookingForm" novalidate>
+          <h3>Formulir Janji Temu</h3>
+          <p>Isi data di bawah ini, kami akan mengonfirmasi via WhatsApp.</p>
 
-            <article class="testimonial-slide min-w-full lg:min-w-[33.333%] lg:px-2">
-              <div class="h-full rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div class="flex gap-1 text-amber-400" aria-label="Rating 5 dari 5">★★★★★</div>
-                <p class="mt-5 text-sm leading-7 text-slate-200">
-                  “Saya booking terlebih dahulu lewat WhatsApp. Responsnya cepat dan jadwal dokter diinformasikan dengan jelas.”
-                </p>
-                <div class="mt-6 flex items-center gap-3">
-                  <div class="grid h-10 w-10 place-items-center rounded-full bg-blue-500/20 text-sm font-bold">RF</div>
-                  <div><p class="text-sm font-bold">Rizky F.</p><p class="text-xs text-slate-400">Pasien Poli Anak</p></div>
-                </div>
-              </div>
-            </article>
-
-            <article class="testimonial-slide min-w-full lg:min-w-[33.333%] lg:px-2">
-              <div class="h-full rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div class="flex gap-1 text-amber-400" aria-label="Rating 5 dari 5">★★★★★</div>
-                <p class="mt-5 text-sm leading-7 text-slate-200">
-                  “Dokternya menjelaskan kondisi saya dengan bahasa yang mudah dipahami. Pengalaman konsultasinya terasa personal.”
-                </p>
-                <div class="mt-6 flex items-center gap-3">
-                  <div class="grid h-10 w-10 place-items-center rounded-full bg-blue-500/20 text-sm font-bold">DS</div>
-                  <div><p class="text-sm font-bold">Dina S.</p><p class="text-xs text-slate-400">Pasien Penyakit Dalam</p></div>
-                </div>
-              </div>
-            </article>
+          <div class="field">
+            <label for="bkNama">Nama Lengkap</label>
+            <input type="text" id="bkNama" placeholder="Nama pasien" required>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- PARTNERS -->
-    <section class="border-b border-slate-100 px-5 py-14 sm:px-6">
-      <div class="mx-auto max-w-7xl text-center">
-        <p class="text-xs font-bold uppercase tracking-[.18em] text-slate-400">Partner & Penjamin</p>
-        <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          <div class="grid h-20 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-sm font-extrabold text-slate-500">BPJS</div>
-          <div class="grid h-20 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-sm font-extrabold text-slate-500">ALLIANZ</div>
-          <div class="grid h-20 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-sm font-extrabold text-slate-500">PRUDENTIAL</div>
-          <div class="grid h-20 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-sm font-extrabold text-slate-500">AXA</div>
-          <div class="grid h-20 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-sm font-extrabold text-slate-500">MANDIRI INHEALTH</div>
-          <div class="grid h-20 place-items-center rounded-xl border border-slate-200 bg-slate-50 text-sm font-extrabold text-slate-500">REKANAN</div>
-        </div>
-        <p class="mt-5 text-xs text-slate-400">Ketersediaan penjamin dan cakupan layanan dapat berbeda. Silakan konfirmasi sebelum kunjungan.</p>
-      </div>
-    </section>
-
-    <!-- BOOKING -->
-    <section id="booking" class="bg-slate-50 px-5 py-20 sm:px-6 lg:py-28">
-      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[.8fr_1.2fr]">
-        <div class="fade-up">
-          <span class="text-sm font-bold uppercase tracking-wider text-primary">Booking Online</span>
-          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-darkblue sm:text-4xl">
-            Atur kunjungan sebelum datang
-          </h2>
-          <p class="mt-5 leading-7 text-slate-600">
-            Isi data singkat berikut. Setelah dikirim, Anda akan diarahkan ke WhatsApp
-            untuk mengonfirmasi jadwal dengan tim Klinik Eunoia.
-          </p>
-
-          <div class="mt-8 space-y-4">
-            <div class="flex gap-3">
-              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">1</span>
-              <div><p class="font-bold text-darkblue">Isi data pasien</p><p class="mt-1 text-xs leading-5 text-slate-500">Lengkapi nama dan nomor yang dapat dihubungi.</p></div>
-            </div>
-            <div class="flex gap-3">
-              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">2</span>
-              <div><p class="font-bold text-darkblue">Pilih layanan</p><p class="mt-1 text-xs leading-5 text-slate-500">Pilih poli dan dokter yang tersedia.</p></div>
-            </div>
-            <div class="flex gap-3">
-              <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-white text-primary shadow-sm">3</span>
-              <div><p class="font-bold text-darkblue">Konfirmasi via WhatsApp</p><p class="mt-1 text-xs leading-5 text-slate-500">Tim kami akan membantu memastikan jadwal.</p></div>
-            </div>
+          <div class="field">
+            <label for="bkTelp">Nomor Telepon</label>
+            <input type="tel" id="bkTelp" placeholder="08xxxxxxxxxx" required>
           </div>
-        </div>
 
-        <form id="booking-form" class="fade-up rounded-3xl border border-slate-200 bg-white p-6 shadow-soft sm:p-8" novalidate>
-          <div class="grid gap-5 sm:grid-cols-2">
+          <div class="field">
+            <label for="bkDokter">Pilih Dokter</label>
+            <select id="bkDokter" required>
+              <option value="">— Pilih dokter —</option>
+              <option>dr. Anindya Rahma, Sp.PD</option>
+              <option>dr. Bagas Prasetyo</option>
+              <option>drg. Clara Wijaya</option>
+              <option>dr. Dimas Nugraha, Sp.A</option>
+              <option>dr. Elena Kusuma, Sp.OG</option>
+            </select>
+          </div>
 
-            <div>
-              <label for="name" class="text-sm font-bold text-slate-700">Nama lengkap *</label>
-              <input id="name" name="name" type="text" autocomplete="name" required
-                     class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-50"
-                     placeholder="Contoh: Budi Santoso" />
-              <p class="error-message mt-1 hidden text-xs font-medium text-red-600"></p>
+          <div class="row-2">
+            <div class="field">
+              <label for="bkTanggal">Tanggal</label>
+              <input type="date" id="bkTanggal" required>
             </div>
-
-            <div>
-              <label for="phone" class="text-sm font-bold text-slate-700">Nomor WhatsApp *</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" required
-                     class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-50"
-                     placeholder="0812-3456-7890" />
-              <p class="error-message mt-1 hidden text-xs font-medium text-red-600"></p>
-            </div>
-
-            <div>
-              <label for="date" class="text-sm font-bold text-slate-700">Tanggal kunjungan *</label>
-              <input id="date" name="date" type="date" required
-                     class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-50" />
-              <p class="error-message mt-1 hidden text-xs font-medium text-red-600"></p>
-            </div>
-
-            <div>
-              <label for="service" class="text-sm font-bold text-slate-700">Poli / layanan *</label>
-              <select id="service" name="service" required
-                      class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-50">
-                <option value="">Pilih layanan</option>
-                <option>Poli Umum</option>
-                <option>Gigi</option>
-                <option>Anak</option>
-                <option>Kandungan</option>
-                <option>Laboratorium</option>
-                <option>Fisioterapi</option>
-                <option>Vaksinasi</option>
-                <option>Medical Check Up</option>
-              </select>
-              <p class="error-message mt-1 hidden text-xs font-medium text-red-600"></p>
-            </div>
-
-            <div class="sm:col-span-2">
-              <label for="doctor" class="text-sm font-bold text-slate-700">Dokter</label>
-              <select id="doctor" name="doctor"
-                      class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-50">
-                <option value="">Tidak menentukan dokter</option>
-                <option>dr. Aditya Pratama, Sp.PD</option>
-                <option>dr. Maria Lestari, Sp.A</option>
-                <option>dr. Sarah Wijaya, Sp.OG</option>
-                <option>drg. Kevin Santoso</option>
-              </select>
-            </div>
-
-            <div class="sm:col-span-2">
-              <label for="complaint" class="text-sm font-bold text-slate-700">Keluhan / kebutuhan</label>
-              <textarea id="complaint" name="complaint" rows="4"
-                        class="mt-2 w-full resize-none rounded-xl border border-slate-200 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-50"
-                        placeholder="Ceritakan secara singkat kebutuhan atau keluhan Anda."></textarea>
+            <div class="field">
+              <label for="bkJam">Jam</label>
+              <input type="time" id="bkJam" required>
             </div>
           </div>
 
-          <button type="submit"
-                  class="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-100 transition hover:bg-blue-700">
-            <i data-lucide="message-circle" class="h-4 w-4"></i>
-            Lanjutkan ke WhatsApp
-          </button>
+          <div class="field">
+            <label for="bkKeluhan">Keluhan (opsional)</label>
+            <textarea id="bkKeluhan" placeholder="Contoh: demam sejak 2 hari"></textarea>
+          </div>
 
-          <p class="mt-4 text-center text-xs leading-5 text-slate-400">
-            Pengiriman formulir akan membuka WhatsApp. Jadwal dianggap terkonfirmasi setelah mendapat balasan dari tim klinik.
-          </p>
+          <button type="submit" class="btn btn-primary full">Kirim Permintaan Janji</button>
         </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="px-5 py-20 sm:px-6 lg:py-28">
-      <div class="mx-auto max-w-3xl">
-        <div class="text-center">
-          <span class="text-sm font-bold uppercase tracking-wider text-primary">FAQ</span>
-          <h2 class="mt-3 text-3xl font-extrabold text-darkblue sm:text-4xl">Pertanyaan yang sering ditanyakan</h2>
+  <!-- FASILITAS -->
+  <section id="fasilitas" class="bg-soft">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Fasilitas</span>
+        <h2>Kenyamanan yang Menunjang Kesembuhan</h2>
+        <p>Setiap sudut Klinik Euonia dirancang agar pasien dan keluarga merasa tenang selama berobat.</p>
+      </div>
+
+      <div class="grid-6">
+        <div class="fas-card">
+          <span class="emoji">🅿️</span>
+          <h3>Parkir Luas</h3>
+          <p>Area parkir aman untuk mobil &amp; motor</p>
         </div>
-
-        <div class="mt-10 space-y-3">
-
-          <div class="faq-item rounded-2xl border border-slate-200 bg-white">
-            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-5 p-5 text-left" aria-expanded="false">
-              <span class="text-sm font-bold text-darkblue">Kapan Klinik Eunoia buka?</span>
-              <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 shrink-0 text-slate-400"></i>
-            </button>
-            <div class="faq-content">
-              <p class="px-5 pb-5 text-sm leading-7 text-slate-600">
-                Klinik melayani Senin–Sabtu pukul 08.00–21.00 dan Minggu pukul 09.00–15.00.
-                Layanan IGD tersedia 24 jam.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item rounded-2xl border border-slate-200 bg-white">
-            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-5 p-5 text-left" aria-expanded="false">
-              <span class="text-sm font-bold text-darkblue">Bagaimana cara membuat janji?</span>
-              <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 shrink-0 text-slate-400"></i>
-            </button>
-            <div class="faq-content">
-              <p class="px-5 pb-5 text-sm leading-7 text-slate-600">
-                Anda dapat mengisi formulir booking di halaman ini atau langsung menghubungi WhatsApp Klinik Eunoia.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item rounded-2xl border border-slate-200 bg-white">
-            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-5 p-5 text-left" aria-expanded="false">
-              <span class="text-sm font-bold text-darkblue">Apakah menerima pasien BPJS?</span>
-              <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 shrink-0 text-slate-400"></i>
-            </button>
-            <div class="faq-content">
-              <p class="px-5 pb-5 text-sm leading-7 text-slate-600">
-                Klinik melayani BPJS untuk layanan yang termasuk dalam cakupan kerja sama. Silakan konfirmasi jenis layanan dan persyaratan sebelum datang.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item rounded-2xl border border-slate-200 bg-white">
-            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-5 p-5 text-left" aria-expanded="false">
-              <span class="text-sm font-bold text-darkblue">Apakah tersedia area parkir?</span>
-              <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 shrink-0 text-slate-400"></i>
-            </button>
-            <div class="faq-content">
-              <p class="px-5 pb-5 text-sm leading-7 text-slate-600">
-                Tersedia area parkir untuk pasien. Kapasitas dapat berubah sesuai kondisi pada jam kunjungan.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item rounded-2xl border border-slate-200 bg-white">
-            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-5 p-5 text-left" aria-expanded="false">
-              <span class="text-sm font-bold text-darkblue">Apakah tersedia layanan vaksinasi?</span>
-              <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 shrink-0 text-slate-400"></i>
-            </button>
-            <div class="faq-content">
-              <p class="px-5 pb-5 text-sm leading-7 text-slate-600">
-                Ya. Ketersediaan vaksin dapat berbeda berdasarkan jenis dan stok. Hubungi kami terlebih dahulu untuk memastikan.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item rounded-2xl border border-slate-200 bg-white">
-            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-5 p-5 text-left" aria-expanded="false">
-              <span class="text-sm font-bold text-darkblue">Kapan hasil laboratorium dapat diambil?</span>
-              <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 shrink-0 text-slate-400"></i>
-            </button>
-            <div class="faq-content">
-              <p class="px-5 pb-5 text-sm leading-7 text-slate-600">
-                Waktu hasil berbeda berdasarkan jenis pemeriksaan. Estimasi akan diinformasikan oleh petugas saat pemeriksaan dilakukan.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item rounded-2xl border border-slate-200 bg-white">
-            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-5 p-5 text-left" aria-expanded="false">
-              <span class="text-sm font-bold text-darkblue">Apakah tersedia telekonsultasi?</span>
-              <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 shrink-0 text-slate-400"></i>
-            </button>
-            <div class="faq-content">
-              <p class="px-5 pb-5 text-sm leading-7 text-slate-600">
-                Tersedia untuk kebutuhan tertentu. Hubungi WhatsApp kami untuk mengetahui ketersediaan dokter dan jenis konsultasi yang dapat dilakukan secara daring.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item rounded-2xl border border-slate-200 bg-white">
-            <button type="button" class="faq-trigger flex w-full items-center justify-between gap-5 p-5 text-left" aria-expanded="false">
-              <span class="text-sm font-bold text-darkblue">Metode pembayaran apa yang tersedia?</span>
-              <i data-lucide="chevron-down" class="faq-chevron h-5 w-5 shrink-0 text-slate-400"></i>
-            </button>
-            <div class="faq-content">
-              <p class="px-5 pb-5 text-sm leading-7 text-slate-600">
-                Pembayaran dapat dilakukan menggunakan metode yang tersedia di klinik. Untuk jenis kartu atau penjamin tertentu, silakan konfirmasi terlebih dahulu.
-              </p>
-            </div>
-          </div>
-
+        <div class="fas-card">
+          <span class="emoji">❄️</span>
+          <h3>Ruang Ber-AC</h3>
+          <p>Ruang tunggu sejuk dan bersih</p>
+        </div>
+        <div class="fas-card">
+          <span class="emoji">💊</span>
+          <h3>Apotek Internal</h3>
+          <p>Obat lengkap, tebus resep langsung</p>
+        </div>
+        <div class="fas-card">
+          <span class="emoji">🔬</span>
+          <h3>Laboratorium</h3>
+          <p>Hasil pemeriksaan cepat &amp; akurat</p>
+        </div>
+        <div class="fas-card">
+          <span class="emoji">📶</span>
+          <h3>Wi-Fi Gratis</h3>
+          <p>Koneksi internet untuk seluruh pengunjung</p>
+        </div>
+        <div class="fas-card">
+          <span class="emoji">🚑</span>
+          <h3>Ambulans Siaga</h3>
+          <p>Layanan antar jemput darurat 24 jam</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FINAL CTA -->
-    <section class="px-5 pb-20 sm:px-6 lg:pb-28">
-      <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary to-blue-700 px-6 py-12 text-white shadow-soft sm:px-10 lg:px-16 lg:py-16">
-        <div class="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
-          <div class="max-w-2xl">
-            <p class="text-sm font-bold uppercase tracking-wider text-blue-100">Saatnya menjaga kesehatan</p>
-            <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Tidak perlu menunggu sampai keluhan bertambah.</h2>
-            <p class="mt-4 max-w-xl leading-7 text-blue-100">
-              Atur jadwal pemeriksaan Anda dan keluarga dengan lebih mudah bersama Klinik Eunoia.
-            </p>
+  <!-- TESTIMONI -->
+  <section id="testimoni">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Testimoni</span>
+        <h2>Cerita dari Pasien Kami</h2>
+        <p>Kepercayaan pasien adalah pencapaian terbesar bagi kami.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="quote-card">
+          <div class="stars">★★★★★</div>
+          <p>"Pelayanannya cepat dan dokternya sangat menjelaskan detail. Anak saya yang takut ke dokter jadi tenang. Terima kasih Klinik Euonia!"</p>
+          <div class="quote-who">
+            <div class="mini">SR</div>
+            <div><b>Siti Rahmawati</b><span>Ibu Rumah Tangga</span></div>
           </div>
+        </article>
 
-          <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <a href="#booking" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-bold text-primary transition hover:bg-blue-50">
-              Buat Janji
-              <i data-lucide="arrow-right" class="h-4 w-4"></i>
-            </a>
-            <a href="https://wa.me/6281234567890?text=Halo%20Klinik%20Eunoia%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20klinik."
-               target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 px-5 py-3.5 text-sm font-bold text-white transition hover:bg-white/10">
-              <i data-lucide="message-circle" class="h-4 w-4"></i>
-              WhatsApp
-            </a>
+        <article class="quote-card">
+          <div class="stars">★★★★★</div>
+          <p>"Daftar janji online-nya sangat membantu. Datang langsung dilayani tanpa antre panjang. Fasilitasnya juga bersih dan nyaman."</p>
+          <div class="quote-who">
+            <div class="mini">AH</div>
+            <div><b>Andi Hermawan</b><span>Karyawan Swasta</span></div>
+          </div>
+        </article>
+
+        <article class="quote-card">
+          <div class="stars">★★★★★</div>
+          <p>"Sudah 3 tahun berobat di sini. Harga terjangkau, hasil lab cepat, dan seluruh stafnya ramah. Sangat direkomendasikan."</p>
+          <div class="quote-who">
+            <div class="mini">ML</div>
+            <div><b>Maria Lestari</b><span>Guru</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-soft">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Pertanyaan yang Sering Diajukan</h2>
+        <p>Tidak menemukan jawaban? Hubungi kami melalui bagian kontak di bawah.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <details class="faq" open>
+          <summary>Apakah Klinik Euonia menerima pasien BPJS?</summary>
+          <div class="faq-body">Ya. Klinik Euonia bekerja sama dengan BPJS Kesehatan untuk layanan poli umum dan beberapa poli spesialis. Cukup bawa kartu BPJS dan KTP saat pendaftaran.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Bagaimana cara membuat janji temu?</summary>
+          <div class="faq-body">Anda dapat mengisi formulir janji temu pada bagian Jadwal di halaman ini, atau menghubungi kami via telepon/WhatsApp di 0812-3456-7890. Konfirmasi akan dikirim maksimal 1x24 jam.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Apakah layanan IGD benar-benar buka 24 jam?</summary>
+          <div class="faq-body">Benar. Layanan IGD dan ambulans Klinik Euonia beroperasi 24 jam setiap hari, termasuk hari libur nasional, dengan dokter jaga yang selalu siaga.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Metode pembayaran apa saja yang tersedia?</summary>
+          <div class="faq-body">Kami menerima pembayaran tunai, kartu debit/kredit, QRIS, transfer bank, serta klaim asuransi dari mitra yang bekerja sama dengan kami.</div>
+        </details>
+
+        <details class="faq">
+          <summary>Berapa lama hasil pemeriksaan laboratorium keluar?</summary>
+          <div class="faq-body">Untuk pemeriksaan rutin seperti darah lengkap dan gula darah, hasil keluar dalam 1–2 jam. Pemeriksaan khusus biasanya memerlukan waktu 1x24 jam.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Kontak</span>
+        <h2>Hubungi Klinik Euonia</h2>
+        <p>Kami siap membantu Anda. Kirim pesan atau kunjungi langsung klinik kami.</p>
+      </div>
+
+      <div class="kontak-grid">
+        <div>
+          <div class="info-item">
+            <div class="ib">📍</div>
+            <div>
+              <b>Alamat</b>
+              <span>Jl. Melati Indah No. 88, Kel. Sukamaju,<br>Kec. Cempaka Putih, Jakarta Pusat 10510</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ib">📞</div>
+            <div>
+              <b>Telepon &amp; WhatsApp</b>
+              <span>(021) 555-8899 · 0812-3456-7890</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ib">✉️</div>
+            <div>
+              <b>Email</b>
+              <span>halo@klinikeuonia.id</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="ib">🕐</div>
+            <div>
+              <b>Jam Operasional</b>
+              <span>Poli: Senin–Sabtu 08.00–20.00<br>IGD: 24 jam setiap hari</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="kontak" class="bg-slate-50 px-5 py-20 sm:px-6 lg:py-24">
-      <div class="mx-auto max-w-7xl">
-        <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
-          <div class="fade-up">
-            <span class="text-sm font-bold uppercase tracking-wider text-primary">Kontak & Lokasi</span>
-            <h2 class="mt-3 text-3xl font-extrabold text-darkblue sm:text-4xl">
-              Kami mudah dijangkau
-            </h2>
+        <form class="form-card" id="contactForm" novalidate>
+          <h3>Kirim Pesan</h3>
+          <p>Punya pertanyaan? Tulis di bawah, tim kami akan membalas segera.</p>
 
-            <div class="mt-8 space-y-5">
-              <div class="flex gap-4">
-                <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-primary shadow-sm"><i data-lucide="map-pin"></i></div>
-                <div><p class="text-sm font-bold text-darkblue">Alamat</p><p class="mt-1 text-sm leading-6 text-slate-500">Jl. Melati No. 88, Jakarta Selatan, DKI Jakarta</p></div>
-              </div>
-
-              <div class="flex gap-4">
-                <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-primary shadow-sm"><i data-lucide="phone"></i></div>
-                <div><p class="text-sm font-bold text-darkblue">Telepon</p><a href="tel:+62211234567" class="mt-1 block text-sm text-primary hover:underline">(021) 1234567</a></div>
-              </div>
-
-              <div class="flex gap-4">
-                <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-emerald-600 shadow-sm"><i data-lucide="message-circle"></i></div>
-                <div><p class="text-sm font-bold text-darkblue">WhatsApp</p><a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="mt-1 block text-sm text-emerald-600 hover:underline">0812-3456-7890</a></div>
-              </div>
-
-              <div class="flex gap-4">
-                <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-primary shadow-sm"><i data-lucide="mail"></i></div>
-                <div><p class="text-sm font-bold text-darkblue">Email</p><a href="mailto:halo@klinikeunoia.id" class="mt-1 block text-sm text-primary hover:underline">halo@klinikeunoia.id</a></div>
-              </div>
-
-              <div class="rounded-2xl border border-blue-100 bg-softblue p-5">
-                <div class="flex gap-3">
-                  <i data-lucide="clock-3" class="mt-0.5 h-5 w-5 shrink-0 text-primary"></i>
-                  <div>
-                    <p class="text-sm font-bold text-darkblue">Jam Operasional</p>
-                    <p class="mt-2 text-xs leading-6 text-slate-600">
-                      Senin–Sabtu: 08.00–21.00<br />
-                      Minggu: 09.00–15.00<br />
-                      <strong>IGD: 24 Jam</strong>
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div class="row-2">
+            <div class="field">
+              <label for="ctNama">Nama</label>
+              <input type="text" id="ctNama" placeholder="Nama Anda" required>
+            </div>
+            <div class="field">
+              <label for="ctEmail">Email</label>
+              <input type="email" id="ctEmail" placeholder="email@contoh.com" required>
             </div>
           </div>
 
-          <div class="fade-up overflow-hidden rounded-3xl border border-slate-200 bg-white p-2 shadow-card">
-            <iframe
-              title="Lokasi Klinik Eunoia di Jakarta Selatan"
-              src="https://www.google.com/maps?q=Jakarta%20Selatan&output=embed"
-              class="h-[430px] w-full rounded-2xl border-0"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-
-            <div class="flex flex-col justify-between gap-4 p-4 sm:flex-row sm:items-center">
-              <div>
-                <p class="text-sm font-bold text-darkblue">Klinik Eunoia</p>
-                <p class="mt-1 text-xs text-slate-500">Jl. Melati No. 88, Jakarta Selatan</p>
-              </div>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=Jl.%20Melati%20No.%2088%2C%20Jakarta%20Selatan"
-                 target="_blank" rel="noopener noreferrer"
-                 class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-xs font-bold text-white hover:bg-blue-700">
-                <i data-lucide="navigation" class="h-4 w-4"></i>
-                Buka Rute
-              </a>
-            </div>
+          <div class="field">
+            <label for="ctPesan">Pesan</label>
+            <textarea id="ctPesan" placeholder="Tulis pesan Anda..." required></textarea>
           </div>
-        </div>
-      </div>
-    </section>
 
-  </main>
+          <button type="submit" class="btn btn-primary full">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#071e30] text-slate-300">
-    <div class="mx-auto max-w-7xl px-5 py-14 sm:px-6">
-      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_.8fr_.8fr_1fr]">
-
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
         <div>
-          <a href="#beranda" class="flex items-center gap-3 text-white">
-            <span class="grid h-10 w-10 place-items-center rounded-xl bg-primary">
-              <i data-lucide="heart-pulse"></i>
-            </span>
-            <span class="text-lg font-extrabold">Klinik Eunoia</span>
-          </a>
-          <p class="mt-5 max-w-sm text-sm leading-7 text-slate-400">
-            Layanan kesehatan keluarga yang profesional, nyaman, dan mudah diakses.
-            Kami hadir untuk mendampingi Anda menjaga kesehatan di setiap tahap kehidupan.
-          </p>
-
-          <div class="mt-5 flex gap-2">
-            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-               class="grid h-9 w-9 place-items-center rounded-lg border border-white/10 hover:bg-white/10">
-              <i data-lucide="instagram" class="h-4 w-4"></i>
-            </a>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-               class="grid h-9 w-9 place-items-center rounded-lg border border-white/10 hover:bg-white/10">
-              <i data-lucide="message-circle" class="h-4 w-4"></i>
-            </a>
+          <div class="brand">
+            <span class="brand-mark">E</span>
+            <span class="brand-text">Klinik <strong>Euonia</strong></span>
           </div>
+          <p>Melayani dengan hati, menyembuhkan dengan ilmu. Klinik keluarga terpercaya sejak 2009.</p>
         </div>
 
         <div>
-          <h3 class="text-sm font-bold text-white">Navigasi</h3>
-          <div class="mt-5 space-y-3 text-sm">
-            <a href="#beranda" class="block hover:text-white">Beranda</a>
-            <a href="#layanan" class="block hover:text-white">Layanan</a>
-            <a href="#dokter" class="block hover:text-white">Dokter</a>
-            <a href="#jadwal" class="block hover:text-white">Jadwal</a>
-            <a href="#fasilitas" class="block hover:text-white">Fasilitas</a>
-          </div>
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#dokter">Dokter</a></li>
+            <li><a href="#jadwal">Jadwal</a></li>
+          </ul>
         </div>
 
         <div>
-          <h3 class="text-sm font-bold text-white">Layanan</h3>
-          <div class="mt-5 space-y-3 text-sm">
-            <a href="#layanan" class="block hover:text-white">Poli Umum</a>
-            <a href="#layanan" class="block hover:text-white">Gigi</a>
-            <a href="#layanan" class="block hover:text-white">Anak</a>
-            <a href="#layanan" class="block hover:text-white">Kandungan</a>
-            <a href="#layanan" class="block hover:text-white">Laboratorium</a>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="text-sm font-bold text-white">Hubungi Kami</h3>
-          <div class="mt-5 space-y-4 text-sm">
-            <a href="tel:+62211234567" class="flex gap-2 hover:text-white">
-              <i data-lucide="phone" class="h-4 w-4 shrink-0"></i> (021) 1234567
-            </a>
-            <a href="mailto:halo@klinikeunoia.id" class="flex gap-2 hover:text-white">
-              <i data-lucide="mail" class="h-4 w-4 shrink-0"></i> halo@klinikeunoia.id
-            </a>
-            <span class="flex gap-2">
-              <i data-lucide="map-pin" class="h-4 w-4 shrink-0"></i>
-              Jl. Melati No. 88, Jakarta Selatan
-            </span>
-          </div>
+          <h4>Informasi</h4>
+          <ul>
+            <li><a href="#fasilitas">Fasilitas</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="mt-12 border-t border-white/10 pt-6">
-        <div class="flex flex-col gap-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Klinik Eunoia. Semua hak dilindungi.</p>
-          <div class="flex gap-5">
-            <a href="#" class="hover:text-white">Kebijakan Privasi</a>
-            <a href="#" class="hover:text-white">Syarat & Ketentuan</a>
-          </div>
-        </div>
-
-        <p class="mt-4 text-[11px] leading-5 text-slate-600">
-          <strong>Catatan template:</strong> Klinik Eunoia pada halaman ini merupakan contoh/template.
-          Nama dokter, jadwal, alamat, partner, foto, rating, dan data layanan dapat diganti sesuai informasi klinik yang sebenarnya.
-        </p>
+      <div class="footer-bottom">
+        <span>© <span id="year">2025</span> Klinik Euonia. Seluruh hak cipta dilindungi.</span>
+        <a href="#euoniadmin">Admin Panel</a>
       </div>
     </div>
   </footer>
+</div>
 
-  <!-- Floating actions -->
-  <div class="fixed bottom-24 right-4 z-40 hidden flex-col gap-2 sm:flex lg:bottom-6">
-    <a href="https://wa.me/6281234567890?text=Halo%20Klinik%20Eunoia%2C%20saya%20ingin%20bertanya%20tentang%20layanan."
-       target="_blank" rel="noopener noreferrer"
-       class="grid h-12 w-12 place-items-center rounded-full bg-emerald-500 text-white shadow-lg transition hover:scale-105 hover:bg-emerald-600"
-       aria-label="Hubungi Klinik Eunoia melalui WhatsApp">
-      <i data-lucide="message-circle"></i>
-    </a>
+<!-- ==================================================== -->
+<!-- ====================== ADMIN ======================= -->
+<!-- ==================================================== -->
+<div id="admin" class="hidden">
 
-    <a href="tel:+62211234567"
-       class="grid h-12 w-12 place-items-center rounded-full bg-primary text-white shadow-lg transition hover:scale-105 hover:bg-blue-700"
-       aria-label="Telepon Klinik Eunoia">
-      <i data-lucide="phone"></i>
-    </a>
+  <!-- LOGIN -->
+  <div class="login-wrap" id="adminLogin">
+    <form class="login-card" id="loginForm" novalidate>
+      <div class="brand-mark">E</div>
+      <h2>Admin Klinik Euonia</h2>
+      <p>Masuk untuk mengelola janji temu &amp; pesan pasien</p>
 
-    <button id="back-top"
-            type="button"
-            class="hidden h-12 w-12 place-items-center rounded-full bg-darkblue text-white shadow-lg transition hover:scale-105"
-            aria-label="Kembali ke atas">
-      <i data-lucide="arrow-up"></i>
-    </button>
+      <div class="login-error" id="loginError"></div>
+
+      <div class="field">
+        <label for="loginUser">Username</label>
+        <input type="text" id="loginUser" placeholder="Masukkan username" autocomplete="username" required>
+      </div>
+
+      <div class="field">
+        <label for="loginPass">Password</label>
+        <input type="password" id="loginPass" placeholder="Masukkan password" autocomplete="current-password" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary full">Masuk</button>
+      <a href="#beranda" class="back-link">← Kembali ke situs</a>
+    </form>
   </div>
 
-  <!-- Mobile sticky bottom CTA -->
-  <div class="mobile-bottom fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-2 backdrop-blur sm:hidden">
-    <div class="grid grid-cols-3 gap-2">
-      <a href="https://wa.me/6281234567890?text=Halo%20Klinik%20Eunoia%2C%20saya%20ingin%20bertanya."
-         target="_blank" rel="noopener noreferrer"
-         class="flex flex-col items-center justify-center gap-1 rounded-xl bg-emerald-50 py-2 text-[10px] font-bold text-emerald-700">
-        <i data-lucide="message-circle" class="h-4 w-4"></i>
-        WhatsApp
-      </a>
+  <!-- PANEL -->
+  <div class="admin-shell hidden" id="adminPanel">
+    <aside class="admin-side">
+      <div class="brand">
+        <span class="brand-mark">E</span>
+        <span class="brand-text">Euonia <strong>Admin</strong></span>
+      </div>
 
-      <a href="tel:+62211234567"
-         class="flex flex-col items-center justify-center gap-1 rounded-xl bg-blue-50 py-2 text-[10px] font-bold text-primary">
-        <i data-lucide="phone" class="h-4 w-4"></i>
-        Telepon
-      </a>
+      <div>
+        <div class="side-label">Menu</div>
+        <nav class="side-nav">
+          <button class="side-link active" data-tab="dashboard">📊 Dashboard</button>
+          <button class="side-link" data-tab="booking">📅 Janji Temu <span class="badge" id="badgeBooking">0</span></button>
+          <button class="side-link" data-tab="pesan">✉️ Pesan <span class="badge" id="badgePesan">0</span></button>
+        </nav>
+      </div>
 
-      <a href="#jadwal"
-         class="flex flex-col items-center justify-center gap-1 rounded-xl bg-primary py-2 text-[10px] font-bold text-white">
-        <i data-lucide="calendar-days" class="h-4 w-4"></i>
-        Jadwal
-      </a>
-    </div>
+      <button class="side-link danger" id="logoutBtn">⎋ Keluar</button>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-top">
+        <div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <p id="pageSub">Ringkasan aktivitas Klinik Euonia</p>
+        </div>
+        <div class="admin-user">
+          <span class="mini">EA</span> eunoia-admin
+        </div>
+      </div>
+
+      <!-- PANEL: DASHBOARD -->
+      <div data-panel="dashboard">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="lbl">Total Janji</div>
+            <div class="val" id="stTotal">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="lbl">Menunggu</div>
+            <div class="val" id="stWait">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="lbl">Pesan Masuk</div>
+            <div class="val" id="stMsg">0</div>
+          </div>
+          <div class="stat-card">
+            <div class="lbl">Dokter Aktif</div>
+            <div class="val">5</div>
+          </div>
+        </div>
+
+        <div class="panel-box">
+          <h3>Janji Temu Terbaru</h3>
+          <div class="sub">5 permintaan janji temu terakhir dari pasien</div>
+          <div class="data-list" id="recentList"></div>
+        </div>
+
+        <div class="panel-box">
+          <h3>Pesan Terbaru</h3>
+          <div class="sub">Pesan masuk dari formulir kontak</div>
+          <div class="data-list" id="recentMsg"></div>
+        </div>
+      </div>
+
+      <!-- PANEL: JANJI TEMU -->
+      <div data-panel="booking" class="hidden">
+        <div class="panel-box">
+          <h3>Daftar Janji Temu</h3>
+          <div class="sub">Kelola seluruh permintaan janji temu pasien</div>
+          <div class="data-list" id="bookingList"></div>
+        </div>
+      </div>
+
+      <!-- PANEL: PESAN -->
+      <div data-panel="pesan" class="hidden">
+        <div class="panel-box">
+          <h3>Kotak Masuk</h3>
+          <div class="sub">Pesan yang dikirim melalui formulir kontak</div>
+          <div class="data-list" id="msgList"></div>
+        </div>
+      </div>
+    </main>
   </div>
+</div>
 
-  <script>
-    /* ============================
-       Basic helpers
-    ============================ */
+<!-- TOAST -->
+<div id="toast"></div>
 
-    lucide.createIcons();
+<script>
+(function () {
+  "use strict";
 
-    function imageFallback(img) {
-      img.onerror = null;
-      img.src = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-          <rect width="800" height="500" fill="#EAF4FF"/>
-          <g fill="none" stroke="#0B63CE" stroke-width="3">
-            <circle cx="400" cy="220" r="70"/>
-            <path d="M360 220h80M400 180v80"/>
-          </g>
-          <text x="400" y="340" text-anchor="middle" font-family="Arial" font-size="22" fill="#0A2A43">
-            Klinik Eunoia
-          </text>
-        </svg>
-      `);
-    }
+  /* ================= KONFIGURASI & UTILITAS ================= */
+  const ADMIN_USER = "eunoia-admin";
+  const ADMIN_PASS = "87654321";
 
-    /* ============================
-       Mobile menu
-    ============================ */
+  const K_BOOK = "eunoia_bookings";
+  const K_MSG  = "eunoia_messages";
+  const K_AUTH = "eunoia_admin_session";
 
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+  const $  = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.prototype.slice.call(r.querySelectorAll(s));
 
-    menuBtn.addEventListener('click', () => {
-      const isOpen = !mobileMenu.classList.contains('hidden');
+  const readLS = (k) => {
+    try { return JSON.parse(localStorage.getItem(k)) || []; }
+    catch (e) { return []; }
+  };
+  const writeLS = (k, v) => localStorage.setItem(k, JSON.stringify(v));
 
-      mobileMenu.classList.toggle('hidden');
-      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
 
-      menuBtn.innerHTML = !isOpen
-        ? '<i data-lucide="x" class="h-5 w-5"></i>'
-        : '<i data-lucide="menu" class="h-5 w-5"></i>';
+  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 
-      lucide.createIcons();
-    });
+  const fmtTanggal = (iso) => {
+    if (!iso) return "-";
+    const d = new Date(iso + "T00:00:00");
+    if (isNaN(d)) return iso;
+    return d.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
+  };
 
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.innerHTML = '<i data-lucide="menu" class="h-5 w-5"></i>';
-        lucide.createIcons();
-      });
-    });
+  /* ================= TOAST ================= */
+  let toastTimer = null;
+  function toast(msg, type) {
+    const el = $("#toast");
+    el.textContent = msg;
+    el.className = "show " + (type || "");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { el.className = ""; }, 3200);
+  }
 
-    /* ============================
-       Smooth scroll with header offset
-    ============================ */
+  /* ================= ROUTING ================= */
+  const landing = $("#landing");
+  const admin   = $("#admin");
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', event => {
-        const targetId = link.getAttribute('href');
+  function isAdminRoute() {
+    return location.hash.toLowerCase() === "#euoniadmin";
+  }
 
-        if (!targetId || targetId === '#') return;
-
-        const target = document.querySelector(targetId);
-        if (!target) return;
-
-        event.preventDefault();
-
-        const headerHeight = document.getElementById('site-header').offsetHeight;
-        const y = target.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
-
-        window.scrollTo({
-          top: y,
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
-
-        history.replaceState(null, '', targetId);
-      });
-    });
-
-    /* ============================
-       Active navigation
-    ============================ */
-
-    const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    const sectionObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-
-          navLinks.forEach(link => {
-            link.classList.remove('text-primary');
-            link.classList.add('text-slate-600');
-          });
-
-          const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-
-          if (active) {
-            active.classList.remove('text-slate-600');
-            active.classList.add('text-primary');
-          }
-        });
-      },
-      {
-        rootMargin: '-35% 0px -55% 0px'
-      }
-    );
-
-    sections.forEach(section => sectionObserver.observe(section));
-
-    /* ============================
-       Scroll reveal
-    ============================ */
-
-    const revealItems = document.querySelectorAll('.fade-up');
-
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('show');
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-
-      revealItems.forEach(item => revealObserver.observe(item));
+  function route() {
+    if (isAdminRoute()) {
+      landing.classList.add("hidden");
+      admin.classList.remove("hidden");
+      refreshAuthUI();
     } else {
-      revealItems.forEach(item => item.classList.add('show'));
+      admin.classList.add("hidden");
+      landing.classList.remove("hidden");
     }
+  }
 
-    /* ============================
-       FAQ accordion
-    ============================ */
+  window.addEventListener("hashchange", route);
 
-    document.querySelectorAll('.faq-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const item = trigger.closest('.faq-item');
-        const isActive = item.classList.contains('active');
+  /* ================= NAVIGASI MOBILE ================= */
+  const navToggle = $("#navToggle");
+  const mainNav   = $("#mainNav");
 
-        document.querySelectorAll('.faq-item').forEach(other => {
-          other.classList.remove('active');
-          other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-        });
+  navToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+    navToggle.textContent = mainNav.classList.contains("open") ? "✕" : "☰";
+  });
 
-        if (!isActive) {
-          item.classList.add('active');
-          trigger.setAttribute('aria-expanded', 'true');
-        }
-      });
+  $$("#mainNav a").forEach((a) => {
+    a.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      navToggle.textContent = "☰";
     });
+  });
 
-    /* ============================
-       Clinic open/closed status
-       Senin-Sabtu 08:00-21:00
-       Minggu 09:00-15:00
-       IGD 24 jam
-    ============================ */
+  /* ================= FORM JANJI TEMU ================= */
+  const bookingForm = $("#bookingForm");
 
-    function updateOpenStatus() {
-      const status = document.getElementById('open-status');
-      const dot = document.getElementById('status-dot');
+  // Set tanggal minimum = hari ini
+  const today = new Date().toISOString().split("T")[0];
+  $("#bkTanggal").min = today;
 
-      const now = new Date();
-      const day = now.getDay();
-      const hour = now.getHours();
-      const minute = now.getMinutes();
-      const currentMinutes = hour * 60 + minute;
+  bookingForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-      let openMinutes;
-      let closeMinutes;
+    const nama    = $("#bkNama").value.trim();
+    const telepon = $("#bkTelp").value.trim();
+    const dokter  = $("#bkDokter").value;
+    const tanggal = $("#bkTanggal").value;
+    const jam     = $("#bkJam").value;
+    const keluhan = $("#bkKeluhan").value.trim();
 
-      if (day === 0) {
-        openMinutes = 9 * 60;
-        closeMinutes = 15 * 60;
-      } else {
-        openMinutes = 8 * 60;
-        closeMinutes = 21 * 60;
-      }
+    if (!nama)    return toast("Nama pasien wajib diisi.", "err");
+    if (!telepon) return toast("Nomor telepon wajib diisi.", "err");
+    if (!dokter)  return toast("Silakan pilih dokter.", "err");
+    if (!tanggal) return toast("Tanggal kunjungan wajib diisi.", "err");
+    if (!jam)     return toast("Jam kunjungan wajib diisi.", "err");
 
-      const isOpen = currentMinutes >= openMinutes && currentMinutes < closeMinutes;
-
-      if (isOpen) {
-        status.textContent = 'Sedang Buka';
-        status.className = 'mt-1 text-lg font-extrabold text-emerald-600';
-        dot.className = 'h-3 w-3 rounded-full bg-emerald-500';
-      } else {
-        status.textContent = 'Sedang Tutup · IGD 24 Jam';
-        status.className = 'mt-1 text-lg font-extrabold text-slate-700';
-        dot.className = 'h-3 w-3 rounded-full bg-slate-400';
-      }
-    }
-
-    updateOpenStatus();
-    setInterval(updateOpenStatus, 60000);
-
-    /* ============================
-       Booking form
-    ============================ */
-
-    const bookingForm = document.getElementById('booking-form');
-    const dateInput = document.getElementById('date');
-
-    const today = new Date();
-    const todayISO = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
-      .toISOString()
-      .split('T')[0];
-
-    dateInput.min = todayISO;
-
-    function showError(input, message) {
-      const wrapper = input.parentElement;
-      const error = wrapper.querySelector('.error-message');
-
-      if (!error) return;
-
-      error.textContent = message;
-      error.classList.remove('hidden');
-      input.classList.add('border-red-400', 'ring-4', 'ring-red-50');
-    }
-
-    function clearError(input) {
-      const wrapper = input.parentElement;
-      const error = wrapper.querySelector('.error-message');
-
-      if (error) {
-        error.textContent = '';
-        error.classList.add('hidden');
-      }
-
-      input.classList.remove('border-red-400', 'ring-4', 'ring-red-50');
-    }
-
-    bookingForm.querySelectorAll('input, select, textarea').forEach(input => {
-      input.addEventListener('input', () => clearError(input));
-      input.addEventListener('change', () => clearError(input));
+    const data = readLS(K_BOOK);
+    data.unshift({
+      id: uid(),
+      nama: nama,
+      telepon: telepon,
+      dokter: dokter,
+      tanggal: tanggal,
+      jam: jam,
+      keluhan: keluhan || "-",
+      status: "Menunggu",
+      dibuat: new Date().toISOString()
     });
+    writeLS(K_BOOK, data);
 
-    bookingForm.addEventListener('submit', event => {
-      event.preventDefault();
+    bookingForm.reset();
+    $("#bkTanggal").min = today;
+    toast("Permintaan janji temu berhasil dikirim. Terima kasih!", "ok");
+    renderAll();
+  });
 
-      const name = document.getElementById('name');
-      const phone = document.getElementById('phone');
-      const date = document.getElementById('date');
-      const service = document.getElementById('service');
-      const doctor = document.getElementById('doctor');
-      const complaint = document.getElementById('complaint');
+  /* ================= FORM KONTAK ================= */
+  const contactForm = $("#contactForm");
 
-      let valid = true;
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-      if (name.value.trim().length < 2) {
-        showError(name, 'Masukkan nama lengkap Anda.');
-        valid = false;
-      }
+    const nama  = $("#ctNama").value.trim();
+    const email = $("#ctEmail").value.trim();
+    const pesan = $("#ctPesan").value.trim();
 
-      const cleanPhone = phone.value.replace(/[^\d+]/g, '');
+    if (!nama)  return toast("Nama wajib diisi.", "err");
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+      return toast("Masukkan alamat email yang valid.", "err");
+    if (!pesan) return toast("Pesan tidak boleh kosong.", "err");
 
-      if (cleanPhone.length < 9) {
-        showError(phone, 'Masukkan nomor WhatsApp yang valid.');
-        valid = false;
-      }
-
-      if (!date.value) {
-        showError(date, 'Pilih tanggal kunjungan.');
-        valid = false;
-      }
-
-      if (!service.value) {
-        showError(service, 'Pilih layanan yang dibutuhkan.');
-        valid = false;
-      }
-
-      if (!valid) return;
-
-      const formattedDate = new Intl.DateTimeFormat('id-ID', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric'
-      }).format(new Date(`${date.value}T12:00:00`));
-
-      const message =
-`Halo Klinik Eunoia, saya ingin membuat janji.
-
-Nama: ${name.value.trim()}
-No. WhatsApp: ${phone.value.trim()}
-Tanggal kunjungan: ${formattedDate}
-Poli/Layanan: ${service.value}
-Dokter: ${doctor.value || 'Tidak menentukan dokter'}
-Keluhan/Kebutuhan: ${complaint.value.trim() || '-'}
-
-Mohon dibantu konfirmasi ketersediaan jadwal. Terima kasih.`;
-
-      const whatsappURL = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
-
-      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+    const data = readLS(K_MSG);
+    data.unshift({
+      id: uid(),
+      nama: nama,
+      email: email,
+      pesan: pesan,
+      dibuat: new Date().toISOString()
     });
+    writeLS(K_MSG, data);
 
-    /* ============================
-       Testimonials
-    ============================ */
+    contactForm.reset();
+    toast("Pesan Anda terkirim. Kami akan segera membalas.", "ok");
+    renderAll();
+  });
 
-    const track = document.getElementById('testimonial-track');
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const prevBtn = document.getElementById('prev-testimonial');
-    const nextBtn = document.getElementById('next-testimonial');
+  /* ================= AUTENTIKASI ADMIN ================= */
+  const loginForm  = $("#loginForm");
+  const loginError = $("#loginError");
 
-    let testimonialIndex = 0;
-    let testimonialTimer;
+  function isLoggedIn() {
+    return localStorage.getItem(K_AUTH) === "true";
+  }
 
-    function visibleTestimonials() {
-      return window.innerWidth >= 1024 ? 3 : 1;
+  function refreshAuthUI() {
+    if (isLoggedIn()) {
+      $("#adminLogin").classList.add("hidden");
+      $("#adminPanel").classList.remove("hidden");
+      renderAll();
+    } else {
+      $("#adminPanel").classList.add("hidden");
+      $("#adminLogin").classList.remove("hidden");
+      loginError.classList.remove("show");
+      loginForm.reset();
+      setTimeout(() => $("#loginUser").focus(), 60);
+    }
+  }
+
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const u = $("#loginUser").value.trim();
+    const p = $("#loginPass").value;
+
+    if (u === ADMIN_USER && p === ADMIN_PASS) {
+      localStorage.setItem(K_AUTH, "true");
+      loginError.classList.remove("show");
+      loginForm.reset();
+      refreshAuthUI();
+      toast("Login berhasil. Selamat datang, Admin!", "ok");
+    } else {
+      loginError.textContent = "Username atau password salah. Silakan coba lagi.";
+      loginError.classList.add("show");
+      $("#loginPass").value = "";
+      $("#loginPass").focus();
+    }
+  });
+
+  $("#logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem(K_AUTH);
+    refreshAuthUI();
+    toast("Anda telah keluar dari panel admin.");
+  });
+
+  /* ================= TAB ADMIN ================= */
+  const TAB_INFO = {
+    dashboard: ["Dashboard", "Ringkasan aktivitas Klinik Euonia"],
+    booking:   ["Janji Temu", "Kelola permintaan janji temu pasien"],
+    pesan:     ["Pesan", "Kotak masuk pesan dari pengunjung situs"]
+  };
+
+  $$(".side-link[data-tab]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tab = btn.dataset.tab;
+      $$(".side-link[data-tab]").forEach((b) => b.classList.toggle("active", b === btn));
+      $$("[data-panel]").forEach((p) => p.classList.toggle("hidden", p.dataset.panel !== tab));
+      $("#pageTitle").textContent = TAB_INFO[tab][0];
+      $("#pageSub").textContent   = TAB_INFO[tab][1];
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  /* ================= RENDER DATA ADMIN ================= */
+  const STATUS_CLASS = { "Menunggu": "wait", "Dikonfirmasi": "confirm", "Selesai": "done" };
+
+  function renderStats() {
+    const books = readLS(K_BOOK);
+    const msgs  = readLS(K_MSG);
+
+    $("#stTotal").textContent = books.length;
+    $("#stWait").textContent  = books.filter((b) => b.status === "Menunggu").length;
+    $("#stMsg").textContent   = msgs.length;
+    $("#badgeBooking").textContent = books.length;
+    $("#badgePesan").textContent   = msgs.length;
+  }
+
+  function bookingRowHTML(b, compact) {
+    return (
+      '<div class="data-row">' +
+        '<div>' +
+          '<div class="who">' + esc(b.nama) + '</div>' +
+          '<div class="meta">' +
+            '<span>📞 <b>' + esc(b.telepon) + '</b></span>' +
+            '<span>👨‍⚕️ ' + esc(b.dokter) + '</span>' +
+            '<span>📅 ' + fmtTanggal(b.tanggal) + '</span>' +
+            '<span>🕐 ' + esc(b.jam) + '</span>' +
+          '</div>' +
+          (compact ? '' : '<div class="meta" style="margin-top:8px"><span>📝 ' + esc(b.keluhan) + '</span></div>') +
+        '</div>' +
+        '<div class="data-actions">' +
+          '<span class="chip ' + (STATUS_CLASS[b.status] || "wait") + '">' + esc(b.status) + '</span>' +
+          (compact ? '' :
+            '<button class="btn-del" data-act="status" data-id="' + b.id + '">Ubah Status</button>' +
+            '<button class="btn-del" data-act="del-book" data-id="' + b.id + '">Hapus</button>') +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function renderBookings() {
+    const data = readLS(K_BOOK);
+    const list = $("#bookingList");
+
+    if (!data.length) {
+      list.innerHTML = '<div class="empty"><span class="big">📅</span>Belum ada permintaan janji temu.</div>';
+      return;
+    }
+    list.innerHTML = data.map((b) => bookingRowHTML(b, false)).join("");
+  }
+
+  function renderRecent() {
+    const data = readLS(K_BOOK).slice(0, 5);
+    const box  = $("#recentList");
+    box.innerHTML = data.length
+      ? data.map((b) => bookingRowHTML(b, true)).join("")
+      : '<div class="empty"><span class="big">📅</span>Belum ada data janji temu.</div>';
+  }
+
+  function msgRowHTML(m, compact) {
+    return (
+      '<div class="data-row">' +
+        '<div>' +
+          '<div class="who">' + esc(m.nama) + '</div>' +
+          '<div class="meta"><span>✉️ ' + esc(m.email) + '</span></div>' +
+          '<div class="meta" style="margin-top:8px"><span>' + esc(m.pesan) + '</span></div>' +
+        '</div>' +
+        (compact ? '' :
+          '<div class="data-actions">' +
+            '<button class="btn-del" data-act="del-msg" data-id="' + m.id + '">Hapus</button>' +
+          '</div>') +
+      '</div>'
+    );
+  }
+
+  function renderMessages() {
+    const data = readLS(K_MSG);
+    const list = $("#msgList");
+    list.innerHTML = data.length
+      ? data.map((m) => msgRowHTML(m, false)).join("")
+      : '<div class="empty"><span class="big">✉️</span>Belum ada pesan masuk.</div>';
+  }
+
+  function renderRecentMsg() {
+    const data = readLS(K_MSG).slice(0, 5);
+    const box  = $("#recentMsg");
+    box.innerHTML = data.length
+      ? data.map((m) => msgRowHTML(m, true)).join("")
+      : '<div class="empty"><span class="big">✉️</span>Belum ada pesan masuk.</div>';
+  }
+
+  function renderAll() {
+    if (!isLoggedIn()) return;
+    renderStats();
+    renderBookings();
+    renderRecent();
+    renderMessages();
+    renderRecentMsg();
+  }
+
+  /* ================= AKSI ADMIN (delegasi event) ================= */
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-act]");
+    if (!btn) return;
+
+    const act = btn.dataset.act;
+    const id  = btn.dataset.id;
+
+    if (act === "del-book") {
+      if (!confirm("Hapus data janji temu ini?")) return;
+      writeLS(K_BOOK, readLS(K_BOOK).filter((b) => b.id !== id));
+      renderAll();
+      toast("Data janji temu dihapus.");
     }
 
-    function updateTestimonials() {
-      const visible = visibleTestimonials();
-      const maxIndex = Math.max(0, slides.length - visible);
-
-      testimonialIndex = Math.min(testimonialIndex, maxIndex);
-
-      const percentage = 100 / visible;
-      track.style.transform = `translateX(-${testimonialIndex * percentage}%)`;
+    if (act === "del-msg") {
+      if (!confirm("Hapus pesan ini?")) return;
+      writeLS(K_MSG, readLS(K_MSG).filter((m) => m.id !== id));
+      renderAll();
+      toast("Pesan dihapus.");
     }
 
-    function nextTestimonial() {
-      const visible = visibleTestimonials();
-      const maxIndex = Math.max(0, slides.length - visible);
-
-      testimonialIndex = testimonialIndex >= maxIndex ? 0 : testimonialIndex + 1;
-      updateTestimonials();
+    if (act === "status") {
+      const data = readLS(K_BOOK);
+      const item = data.find((b) => b.id === id);
+      if (!item) return;
+      const flow = ["Menunggu", "Dikonfirmasi", "Selesai"];
+      item.status = flow[(flow.indexOf(item.status) + 1) % flow.length];
+      writeLS(K_BOOK, data);
+      renderAll();
+      toast("Status diubah menjadi: " + item.status, "ok");
     }
+  });
 
-    function previousTestimonial() {
-      const visible = visibleTestimonials();
-      const maxIndex = Math.max(0, slides.length - visible);
+  /* ================= INISIALISASI ================= */
+  $("#year").textContent = new Date().getFullYear();
+  route();
 
-      testimonialIndex = testimonialIndex <= 0 ? maxIndex : testimonialIndex - 1;
-      updateTestimonials();
-    }
-
-    prevBtn.addEventListener('click', previousTestimonial);
-    nextBtn.addEventListener('click', nextTestimonial);
-
-    function startTestimonialTimer() {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      clearInterval(testimonialTimer);
-      testimonialTimer = setInterval(nextTestimonial, 5500);
-    }
-
-    startTestimonialTimer();
-    updateTestimonials();
-
-    document.getElementById('testimonial-slider').addEventListener('mouseenter', () => {
-      clearInterval(testimonialTimer);
-    });
-
-    document.getElementById('testimonial-slider').addEventListener('mouseleave', () => {
-      startTestimonialTimer();
-    });
-
-    window.addEventListener('resize', updateTestimonials);
-
-    /* ============================
-       Back to top
-    ============================ */
-
-    const backTop = document.getElementById('back-top');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        backTop.classList.remove('hidden');
-        backTop.classList.add('grid');
-      } else {
-        backTop.classList.add('hidden');
-        backTop.classList.remove('grid');
-      }
-    }, { passive: true });
-
-    backTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-      });
-    });
-
-    /* ============================
-       Prevent broken hash-only links
-    ============================ */
-
-    document.querySelectorAll('a[href="#"]').forEach(link => {
-      link.addEventListener('click', event => event.preventDefault());
-    });
-  </script>
-
+  // Sinkronisasi antar-tab browser
+  window.addEventListener("storage", () => { if (isLoggedIn()) renderAll(); });
+})();
+</script>
 </body>
 </html>
